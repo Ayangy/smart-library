@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>湖北智库-智库机构</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div class="top_nav">
+			<ul class="top_nav_center">
+				<li class="top_nav_icon webo_icon">
+					<a href="https://weibo.com/#_loginLayer_1513155457173"></a>
+				</li>
+				<li class="top_nav_icon wechat_icon">
+					<a></a>
+				</li>
+				<li class="top_nav_search">
+					<a class="btn-search border-radius5 right" onclick="searchByContentValue()">搜索</a>
+					<input type="text" class="input-230 border-radius5 right" placeholder="请输入关键字">
+				</li>
+				<li class="language_icon">
+					<a>English</a>
+				</li>
+				<li class="login_icon">
+					<a>登录</a>
+				</li>
+				<li class="register_icon">
+					<a href="register.html">注册</a>
+				</li>
+			</ul>
+		</div>
+		<div class="index-logo">
+			<div class="container clearfix">
+				<div class="logo_left">
+					<a href="index.html" class="top_logo"></a>
+					<div class="center_url">
+						<span class="zkurl">www.hbzhiku.org.cn</span>
+						<span class="zkduty"></span>
+					</div>
+					<div class="bottom_slogan">湖北省社会科学院主办 </div>
+				</div>
+				<div class="banner_right">
+					<img />
+				</div>
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="container" id="container">
+				<ul>
+					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
+					<li><a href="zkywList.html">智库动态</a></li>
+					<li><a href="hotspots.html">决策热点</a></li>
+					<li><a href="decision.html">决策调研</a></li>
+					<li><a href="forum.html">智库论坛</a></li>
+					<li><a href="expert.html">智库专家</a></li>
+					<li><a href="organizationHome.html" class="current">智库机构</a></li>
+					<li><a href="achievements.html">智库成果</a></li>
+					<li><a href="union.html">智库联盟</a></li>
+					<li><a href="database.html">数据库</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="listContent">
+			<div class="leftMenu" id="leftMenu">
+				<ul>
+					<li><a class="current" onclick="leftMenuClickEvent(event, this,0)">全部</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,1)">党政智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,2)">社科院智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,3)">党校（行政学院）智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,4)">省级专门智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,5)">省级改革智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,6)">高校智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,7)">社会智库</a></li>
+				</ul>
+			</div>
+			<div class="listRight">
+				<div class="listNavbar" id="listNavbar">您当前位置：智库机构 > 全部</div>
+				<div class="listNew">
+					<div class="org-Newlist">
+						<!--<div>湖北省政委研室</div>
+						<div>潜江市政委研室</div>-->
+					</div>
+					<div class="org-Otherlist">
+						<!--<span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span>-->
+						<!--<span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span><span>宜昌市党委</span>-->
+					</div>
+				</div>
+				<div class="ach-search org-search expert-search">
+					<label>机构查询：</label>
+					<!--<input type="text" class="border-radius3 mr10" placeholder="" id="allianceSelectTextField" onchange="textFieldChangeInput()">-->
+					<input type="text" class="border-radius3 mr10" placeholder="" id="allianceSelectTextField">
+					<span class="border-radiusAll radio" id="expertName"></span>
+					<label class="pr20">机构名称</label>
+					<a href="##" class="submit border-radius5 relative" style="width:40px;height:30px;line-height:30px;top:1px;" id="submit-Search-btn">查询</a>
+				</div>
+				<div class="org-letter">
+					<span>全部</span>
+					<a>A</a>
+					<a>B</a>
+					<a>C</a>
+					<a>D</a>
+					<a>E</a>
+					<a>F</a>
+					<a>G</a>
+					<a>H</a>
+					<a>I</a>
+					<a>J</a>
+					<a>K</a>
+					<a>L</a>
+					<a>M</a>
+					<a>N</a>
+					<a>O</a>
+					<a>P</a>
+					<a>Q</a>
+					<a>R</a>
+					<a>S</a>
+					<a>T</a>
+					<a>U</a>
+					<a>V</a>
+					<a>W</a>
+					<a>X</a>
+					<a>Y</a>
+					<a>Z</a>
+				</div>
+				<div class="org-search-result">
+					<ol id="line-spe-china">
+					</ol>
+				</div>
+				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
+					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container relative">
+				<img class="logomap" src="img/bot.gif" />
+				<img class="logo" src="img/bottom-logo1.gif" />
+				<div class="foonterMain">
+					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+				</div>
+				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
+			</div>
+		</div>
+		<!--登录盒子-->
+		<div class="login-bg">
+			<ul class="login-box">
+				<li class="login-title">
+					<span>欢迎登录湖北智库网</span>
+					<span class="close-icon"></span>
+				</li>
+				<li class="login-username">
+					<span>用户名：</span>
+					<input id="username" type="text" placeholder="" />
+				</li>
+				<li>
+					<span>密&nbsp;码：</span>
+					<input id="password" type="text" />
+				</li>
+				<li>
+					<span class="code">验证码：</span>
+					<input id="codeinpts" class="codeinpt" type="text" />
+					<img id="loginImg" src="img/code.gif" />
+					<img id="newloginImg" class="new" src="img/new.gif" />
+					<a class="forgetpw" href="findpassword.html">忘记密码?</a>
+				</li>
+				<li>
+					<input id="loginbtn" type="button" value="登录" />
+					<input id="cancelbtn" type="button" value="取消" />
+				</li>
+				<li class="login-tips"></li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper-3.4.2.min.js"></script>
+	<script src="js/findOrganizationByLetter.js"></script>
+	<script src="js/HomePage/HomePageManager.js"></script>
+	<script src="js/ArticleSortManager.js"></script>
+
+	<script>
+		var parentId = 0;
+		var organizationType = 1;
+		$(function() {
+			$('.org-letter span').click(function() {
+				loadHtmlContent(null);
+			})
+			$('.org-letter a').click(function() {
+				var txt = $(this).text();
+				loadHtmlContent(txt);
+			})
+			$('#expertName').click(function() {
+				if ($(this).children().length > 0) $(this).children().remove();
+				else {
+					$(this).append('<em class="border-radiusAll"></em>');
+					$('#research').children().remove();
+				}
+			})
+			$('#research').click(function() {
+				if ($(this).children().length > 0) $(this).children().remove();
+				else {
+					$(this).append('<em class="border-radiusAll"></em>');
+					$('#expertName').children().remove();
+				}
+			})
+			$('#allianceSelectTextField').change(function() {
+				if ($('#expertName').children().length > 0)
+					$('#expertName').children().remove();
+				else {
+					$('#expertName').append('<em class="border-radiusAll"></em>');
+					$('#research').children().remove();
+				}
+			})
+			$('#addressSelectTextField').change(function() {
+				if ($('#research').children().length > 0)
+					$('#research').children().remove();
+				else {
+					$('#research').append('<em class="border-radiusAll"></em>');
+					$('#expertName').children().remove();
+				}
+			})
+			$('#submit-Search-btn').click(function() {
+					var field, keyword;
+					if ($('#expertName').children().length > 0) {
+						field = "name";
+						if ($('#allianceSelectTextField')[0].value.length > 0) {
+							keyword = $('#allianceSelectTextField')[0].value;
+						}
+					}
+					if ($('#research').children().length > 0) {
+						field = "territoryName";
+						if ($('#addressSelectTextField')[0].value.length > 0) {
+							keyword = $('#addressSelectTextField')[0].value;
+						}
+					}
+					findOrganizationByCondition(field, keyword, organizationType, function(result) {
+						document.getElementById("line-spe-china").innerHTML = '';
+						letterObject = result;
+						var length = function() {
+							var count = 0;
+							for (var i in result) {
+								count++;
+							}
+							return count;
+						};
+						if (length() > 0) {
+							var content = '';
+							for (var i in result) {
+								var objArr = result[i];
+								if (objArr.length == 0) {
+									continue;
+								}
+								content += '<li><span>' + i + '</span>';
+								for (var j = 0; j < objArr.length; j++) {
+									var subObj = objArr[j];
+									content += '<a href="##' + subObj.id + '&' + i + '" onclick="organizationNameClickEvent(event, this,' + subObj.id + ')">' + subObj.name + '</a>';
+								}
+								content += '</li>';
+							}
+							if (content.length > 0) {
+								document.getElementById("line-spe-china").innerHTML = content;
+							}
+						}
+					}, 0);
+				})
+				//获取最新机构
+			getOrgNew(0);
+		})
+
+		function selectTitleChangeEvent(value) {
+			organizationType = value;
+		}
+
+		function organizationNameClickEvent(event, objc, subid) {
+			var text = objc.textContent;
+			var urlMessage = window.location.hash;
+			urlMessage = urlMessage.substring(2, urlMessage.length);
+			urlMessage = urlMessage.split("&");
+			window.location.href = "organization.html?" + subid;
+		}
+		var getLeftMenumList = function() {
+			getArticleSonSort(parentId, function(result) {
+				if (result != null) {
+					sonsortArr = result;
+					parentId = -1;
+					for (var i = 0; i < sonsortArr.length; i++) {
+						var subObj = sonsortArr[i];
+						if (subObj.name == document.title) {
+							parentId = subObj.id;
+							break;
+						}
+					}
+					if (parentId == -1) return;
+					getArticleSonSort(parentId, function(result) {
+						if (result != null) {
+							subSonSortArr = result;
+							var content = '<ul>';
+							for (var i = 0; i < result.length; i++) {
+								var subObj = result[i];
+								content += '<li><a href="##' + subObj.id + '" onclick="leftMenuClickEvent(event, this,' + subObj.id + ')"' + (i == 0 ? ' class="current">' : '>') + subObj.name + '</a></li>';
+							}
+							content += '</ul>';
+							document.getElementById("leftMenu").innerHTML = content;
+							leftMenuClickEvent(null, null);
+						}
+					});
+				}
+			});
+		}
+
+		function loadHtmlContent(letter) {
+			//getLeftMenumList();
+			findOrganizationByLetter(letter, 0, function(result) {
+				document.getElementById("line-spe-china").innerHTML = '';
+				letterObject = result;
+				var length = function() {
+					var count = 0;
+					for (var i in result) {
+						count++;
+					}
+					return count;
+				};
+				if (length() > 0) {
+					var content = '';
+					for (var i in result) {
+						var objArr = result[i];
+						if (objArr.length == 0) {
+							continue;
+						}
+						content += '<li><span>' + i + '</span>';
+						for (var j = 0; j < objArr.length; j++) {
+							var subObj = objArr[j];
+							content += '<a href="##' + subObj.id + '&' + i + '" onclick="organizationNameClickEvent(event, this,' + subObj.id + ')">' + subObj.name + '</a>';
+						}
+						content += '</li>';
+					}
+					if (content.length > 0) {
+						document.getElementById("line-spe-china").innerHTML = content;
+					}
+				}
+			}, 1);
+		}
+		loadHtmlContent(null);
+
+		function leftMenuClickEvent(event, obj, subid) {
+			organizationType = subid;
+			var title = '全部';
+			if (obj != null) {
+				for (var i = 0; i < obj.parentElement.parentElement.childElementCount; i++) {
+					var aobj = obj.parentElement.parentElement.children[i].children[0];
+					aobj.className = null;
+					if (obj == aobj) {
+						continue;
+					}
+				}
+				obj.className = "current";
+				title=obj.textContent;
+				if(title!="全部"){
+					title='湖北'+obj.textContent;
+				}
+				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：智库机构  > " + title;
+				title = obj.textContent;
+			}
+			subId = subid;
+			document.getElementById("line-spe-china").innerHTML = '';
+			//        $('.listRight div[class = "pages"]')[0].hidden = true;
+			var contentId = window.location.hash.toString();
+			contentId = contentId.substring(2, contentId.length);
+			findOrganizationByLetter(null, 0, function(result) {
+				document.getElementById("line-spe-china").innerHTML = '';
+				letterObject = result;
+				var length = function() {
+					var count = 0;
+					for (var i in result) {
+						count++;
+					}
+					return count;
+				};
+				if (length() > 0) {
+					var content = '';
+					for (var i in result) {
+						var objArr = result[i];
+						if (objArr.length == 0) {
+							continue;
+						}
+						content += '<li><span>' + i + '</span>';
+						for (var j = 0; j < objArr.length; j++) {
+							var subObj = objArr[j];
+							content += '<a href="##' + subObj.id + '&' + i + '" onclick="organizationNameClickEvent(event, this,' + subObj.id + ')">' + subObj.name + '</a>';
+						}
+						content += '</li>';
+					}
+					if (content.length > 0) {
+						document.getElementById("line-spe-china").innerHTML = content;
+					}
+				}
+			}, subid);
+			getOrgNew(subid);
+			//frontEnd/findByOrganizationType
+			/* selectArticleOrgSort(subid, 0,function(result) {
+			     console.log('-----------------',result)
+			     document.getElementById("line-spe-china").innerHTML = '';
+			     letterObject = result;
+			     var length = function() {
+			         var count = 0;
+			         for (var i in result) {
+			             count++;
+			         }
+			         return count;
+			     };
+			     if (length() > 0) {
+			         var content = '';
+			         for (var i in result) {
+			             var objArr = result[i];
+			             if (objArr.length == 0) {
+			                 continue;
+			             }
+			             content += '<li><span>' + i + '</span>';
+			             var subObj = objArr;
+			             content += '<a href="##' + subObj.id + '&' + i + '" onclick="organizationNameClickEvent(event, this,' + subObj.id + ')">' + subObj.name + '</a>';
+			             content += '</li>';
+			         }
+			         if (content.length > 0) {
+			             document.getElementById("line-spe-china").innerHTML = content;
+			         }
+			     }*/
+			/*if (result != null) {
+			    articleSortArr = result;
+			    var content = '';
+			    for (var i = 0; i < result.length; i++) {
+			        var subObj = result[i];
+			        content += '<li><a href="forum-details.html?' + subObj.id + '&' + encodeURI(title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
+			    }
+			    document.getElementById("line-spe-china").innerHTML = content;
+			    if (result.length > 10) {
+			        //                    $('.listRight div[class = "pages"]')[0].hidden = true
+			    }
+			}*/
+			// });
+			/* selectArticleSort(subid, 0, 0, function(result) {
+			     if (result != null) {
+			         articleSortArr = result;
+			         var content = '';
+			         for (var i = 0; i < result.length; i++) {
+			             var subObj = result[i];
+			             content += '<li><a href="forum-details.html?' + subObj.id + '&' + encodeURI(title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
+			         }
+			         document.getElementById("line-spe-china").innerHTML = content;
+			         if (result.length > 10) {
+			             //                    $('.listRight div[class = "pages"]')[0].hidden = true
+			         }
+			     }
+			 });*/
+		}
+		/*findTitleImageByState();
+		var orgId;
+
+		function orgIntroMoreEvent() {
+			window.location.href = 'org-intro.html?' + orgId;
+		}
+
+		function getContentList(contentId) {
+			$('.leftMenu').find('[href = "org-intro.html"]')[0].href = "org-intro.html?" + contentId;
+			getOrganizationNotice(contentId, 21, function(result) {
+				if (result != null) {
+					$('.org-home-topNews dt')[0].textContent = result.title;
+					$('.org-home-topNews dd')[0].innerHTML = result.content.substring(0, 200) + '<a href="organization-details.html?' + result.id + '" class="red">【详情】</a>';
+				}
+			})
+			getOrganizationActivity(contentId, 22, 0, 4, function(result) {
+				if (result != null) {
+					for (var i = 0; i < 4; i++) {
+						$('.org-home-topNews li')[i].hidden = false;
+						if (i >= result.length) {
+							$('.org-home-topNews li')[i].hidden = true;
+						} else {
+							if (i == 3) {
+								$('.org-home-topNews li')[i].innerHTML = '<a href="organization-details.html?' + result[i].id + '">【' + result[i].title + '】</a><span class="red">【更多动态】</span>';
+							} else {
+								$('.org-home-topNews li')[i].innerHTML = '<a href="organization-details.html?' + result[i].id + '">【' + result[i].title + '】</a>';
+							}
+						}
+					}
+				}
+			})
+			getInstitutionArticle(contentId, 46, 0, 1, function(result) {
+				if (result != null) {
+					var subObj = result[0];
+					$('.org-home-news dt')[0].find('img')[2].src = subObj.imgUrl;
+					$('.org-home-news dt').find('p')[1].textContent = subObj.title;
+					$('.org-home-news').find('dd')[7].textContent = subObj.title;
+					$('.org-home-news dl').find('[class = org-home-text]')[2].textContent = subObj.content;
+				}
+			})
+			getInstitutionArticle(contentId, 45, 0, 2, function(result) {
+				if (result != null) {
+					for (var i = 0; i < result.length; i++) {
+						var subObj = result[i];
+						$('.org-home-news dt')[0].find('img')[i + 1].src = subObj.imgUrl;
+						$('.org-home-news').find('dd')[i + 5].textContent = subObj.title;
+						$('.org-home-news dl').find('[class = org-home-text]')[0].textContent = subObj.content;
+					}
+				}
+			})
+			getInstitutionArticle(contentId, 44, 0, 5, function(result) {
+				if (result != null) {
+					var subObj = result[0];
+					$('.org-home-news dt')[0].find('img')[0].src = subObj.imgUrl;
+					$('.org-home-news dt').find('p')[0].textContent = subObj.title;
+					for (var i = 0; i < result.length; i++) {
+						$('.org-home-news').find('dd')[i].textContent = subObj.title;
+					}
+				}
+			})
+		}
+
+		function loadHtmlContent() {
+			var contentId = window.location.search.toString();
+			if (contentId.length > 0) {
+				contentId = contentId.substring(1, contentId.length);
+				contentId = contentId.split('&');
+				contentId = contentId[0];
+				orgId = contentId;
+				findInstitutionByid(contentId, function(result) {
+					if (result != null) {
+						$('.listNavbar')[0].textContent = '——' + result.name + '——';
+						if (result.lead.length > 0)
+							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>主任、党组书记';
+						if (result.intro.length > 0)
+							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + contentId + '" class="red">【详情】</a>';
+						if (result.institutionSetting.length > 0)
+							$('.org-right-box-content p')[1].innerHTML = result.institutionSetting.substring(0, 100);
+					}
+				})
+				getContentList(contentId);
+			} else {
+				getThisInstitution(function(result) {
+					if (result != null) {
+						orgId = result.id;
+						getContentList(result.id);
+						$('.listNavbar')[0].textContent = '——' + result.name + '——';
+						if (result.lead.length > 0)
+							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>主任、党组书记';
+						if (result.intro.length > 0)
+							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + result.id + '" class="red">【详情】</a>';
+						if (result.institutionSetting.length > 0)
+							$('.org-right-box-content p')[1].innerHTML = result.institutionSetting.substring(0, 100);
+					}
+				})
+			}
+		}
+		loadHtmlContent();*/
+		function getOrgNew(id) {
+			getZkNew(id, function(result) {
+				if (result != null) {
+					var html = "",
+						html1 = "";
+					if (result.length >= 2) {
+						for (var i = 0; i < 2; i++) {
+							if (result[i].name == null) {
+								result[i].name = "";
+							}
+							html += '<div>' + result[i].name + '</div>'
+						}
+						for (var i = 2; i < result.length; i++) {
+							if (result[i].name == null) {
+								result[i].name = "";
+							}
+							html1 += '<span>' + result[i].name + '</span>'
+						}
+					} else if (result.length == 1) {
+						html += '<div>' + result[0].name + '</div>'
+					}
+					$('.org-Newlist').html(html);
+					$('.org-Otherlist').html(html1);
+				} else {
+					$('.org-Newlist').html('');
+					$('.org-Otherlist').html('');
+				}
+			})
+		}
+	</script>
+
+</html>

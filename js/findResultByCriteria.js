@@ -2,7 +2,7 @@
  * Created by zhang_jian on 2017/11/29.
  */
 
-document.write("<script language=\"javascript\" src=\"js/HttpRequest.js\"><\/script>");
+//document.write("<script language=\"javascript\" src=\"js/HttpRequest.js\"><\/script>");
 
 function findResultByCriteria(keyword,textTypeId,sort,callBack) {
     var params = '';
@@ -36,7 +36,7 @@ function findResultByCriteria(keyword,textTypeId,sort,callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -60,7 +60,7 @@ function getArticleList(callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+               // alert(result.message);
                 callBack && callBack(null);
             }
                 break;

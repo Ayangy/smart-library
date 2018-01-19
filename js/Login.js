@@ -25,7 +25,7 @@ function login() {
         switch (status) {
             case -1:
             {
-                alert(result.message);
+                //alert(result.message);
             }
                 break;
             case 0:

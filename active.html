@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>湖北智库-账号激活</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			html,
+			body {
+				background-color: #f4f4f4;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top_nav">
+			<ul class="top_nav_center">
+				<li class="top_nav_icon webo_icon">
+					<a href="https://weibo.com/#_loginLayer_1513155457173"></a>
+				</li>
+				<li class="top_nav_icon wechat_icon">
+					<a href="#"></a>
+				</li>
+				<li class="top_nav_search">
+					<a class="btn-search border-radius5 right" onclick="searchByContentValue()">搜索</a>
+					<input type="text" class="input-230 border-radius5 right" placeholder="请输入关键字">
+				</li>
+				<li class="language_icon">
+					<a href="#">English</a>
+				</li>
+				<li class="login_icon">
+					<a href="#">登录</a>
+				</li>
+				<li class="register_icon">
+					<a href="register.html">注册</a>
+				</li>
+			</ul>
+		</div>
+		<div class="index-logo">
+			<div class="container clearfix">
+				<div class="logo_left">
+					<a href="index.html" class="top_logo"></a>
+					<div class="center_url">
+						<span class="zkurl">www.hbzhiku.org.cn</span>
+						<span class="zkduty"></span>
+					</div>
+					<div class="bottom_slogan">湖北省社会科学院主办 </div>
+				</div>
+				<div class="banner_right">
+					<img />
+				</div>
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="container" id="container">
+				<ul>
+					<li><a href="zkywList.html">智库动态</a></li>
+					<li><a href="hotspots.html">决策热点</a></li>
+					<li><a href="decision.html">决策调研</a></li>
+					<li><a href="forum.html">智库论坛</a></li>
+					<li><a href="expert.html">智库专家</a></li>
+					<li><a href="organizationHome.html">智库机构</a></li>
+					<li><a href="achievements.html">智库成果</a></li>
+					<li><a href="union.html">智库联盟</a></li>
+					<li><a href="database.html">数据库</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="newbox">
+			<div class="newbox-content mt150" style="color: green;">
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container relative">
+				<img class="logomap" src="img/bot.gif" />
+				<img class="logo" src="img/bottom-logo1.gif" />
+				<div class="foonterMain">
+					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+				</div>
+				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
+			</div>
+		</div>
+		<!--登录盒子-->
+		<div class="login-bg">
+			<ul class="login-box">
+				<li class="login-title">
+					<span>欢迎登录湖北智库网</span>
+					<span class="close-icon"></span>
+				</li>
+				<li class="login-username">
+					<span>用户名：</span>
+					<input id="username" type="text" placeholder="" />
+				</li>
+				<li>
+					<span>密&nbsp;码：</span>
+					<input id="password" type="text" />
+				</li>
+				<li>
+					<span class="code">验证码：</span>
+					<input id="codeinpts" class="codeinpt" type="text" />
+					<img id="loginImg" src="img/code.gif" />
+					<img id="newloginImg" class="new" src="img/new.gif" />
+					<a class="forgetpw" href="findpassword.html">忘记密码?</a>
+				</li>
+				<li>
+					<input id="loginbtn" type="button" value="登录" />
+					<input id="cancelbtn" type="button" value="取消" />
+				</li>
+				<li class="login-tips"></li>
+			</ul>
+		</div>
+	</body>
+	<script src="http://www.17sucai.com/preview/77697/2015-09-06/jiaoben1484/js/jQuery.1.8.2.min.js"></script>
+	<script src="js/HomePage/HomePageManager.js"></script>
+	<script type="text/javascript">
+			var id=	GetQueryString('id');
+			var actcode=GetQueryString('ActivationCode');
+			$.ajax({
+				type: "get",
+				url: BaseUrl + "/clientUser/activateUser?id="+id+"&ActivationCode="+actcode,
+				async: true,
+				dataType: "JSON",
+				success: function(data) {
+					console.log(data);
+					$('.newbox-content').html(data.message);
+				},
+				error: function() {
+					console.log('异常');
+				}
+			});
+//		http://192.168.100.62/active.html?
+
+	</script>
+
+</html>

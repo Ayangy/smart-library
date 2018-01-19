@@ -6,7 +6,6 @@ document.write("<script language=\"javascript\" src=\"js/HttpRequest.js\"><\/scr
 
 
 function getDatabase(keyword, beginTime, endTime, index, size, callBack) {
-
     var params = '';
     if (keyword != null) {
         params += '?keyword='+keyword;
@@ -58,7 +57,7 @@ function getDatabase(keyword, beginTime, endTime, index, size, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;

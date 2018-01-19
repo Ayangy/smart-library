@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>湖北智库-智库成果</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/findResultByCriteria.js"></script>
+	</head>
+
+	<body>
+		<div class="top_nav">
+			<ul class="top_nav_center">
+				<li class="top_nav_icon webo_icon">
+					<a href="https://weibo.com/#_loginLayer_1513155457173"></a>
+				</li>
+				<li class="top_nav_icon wechat_icon">
+					<a href="#"></a>
+				</li>
+				<li class="top_nav_search">
+					<a class="btn-search border-radius5 right" onclick="searchByContentValue()">搜索</a>
+					<input type="text" class="input-230 border-radius5 right" placeholder="请输入关键字">
+				</li>
+				<li class="language_icon">
+					<a href="#">English</a>
+				</li>
+				<li class="login_icon">
+					<a href="#">登录</a>
+				</li>
+				<li class="register_icon">
+					<a href="register.html">注册</a>
+				</li>
+			</ul>
+		</div>
+		<div class="index-logo">
+			<div class="container clearfix">
+				<div class="logo_left">
+					<a href="index.html" class="top_logo"></a>
+					<div class="center_url">
+						<span class="zkurl">www.hbzhiku.org.cn</span>
+						<span class="zkduty"></span>
+					</div>
+					<div class="bottom_slogan">湖北省社会科学院主办 </div>
+				</div>
+				<div class="banner_right">
+					<img />
+				</div>
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="container" id="container">
+				<ul>
+					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
+					<li><a href="zkywList.html">智库动态</a></li>
+					<li><a href="hotspots.html">决策热点</a></li>
+					<li><a href="decision.html" class="current">决策调研</a></li>
+					<li><a href="forum.html">智库论坛</a></li>
+					<li><a href="expert.html">智库专家</a></li>
+					<li><a href="organizationHome.html">智库机构</a></li>
+					<li><a href="achievements.html">智库成果</a></li>
+					<li><a href="union.html">智库联盟</a></li>
+					<li><a href="database.html">数据库</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="decision-banner">
+			<img src="img/pic10.gif" />
+		</div>
+
+		<div class="decision-content">
+			<div class="decision-detail">
+				<div class="decision-detail-content">
+					<img src="img/pic11.png" alt="">
+					<div class="decision-detail-content-div">
+						<ul>
+							<li class="decision-detail-content-div-ul-li">
+								<a>提交问卷调查</a>
+								<form enctype="multipart/form-data" method="post" name="fileinfo" id="myFormElement">
+									<input id="file" type="file" name="file" />
+								</form>
+							</li>
+							<li class="decision-detail-content-div-ul-rightli">
+								<a>下载调查问卷</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="release-box">
+					<input type="text" class="release-inpt" placeholder="请发表你的建议和想法吧~" />
+					<input type="button" value="发布" class="release-btn" />
+					<!--提示-->
+					<div class="tips"></div>
+				</div>
+				<ul class="comment">
+
+				</ul>
+				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 30px;padding-bottom: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
+					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="footer" style="margin-top: 0px">
+			<div class="container relative">
+				<img class="logomap" src="img/bot.gif" />
+				<img class="logo" src="img/bottom-logo1.gif" />
+				<div class="foonterMain">
+					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+				</div>
+				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
+			</div>
+		</div>
+		<!--登录盒子-->
+		<div class="login-bg">
+			<ul class="login-box">
+				<li class="login-title">
+					<span>欢迎登录湖北智库网</span>
+					<span class="close-icon"></span>
+				</li>
+				<li class="login-username">
+					<span>用户名：</span>
+					<input id="username" type="text" placeholder="" />
+				</li>
+				<li>
+					<span>密&nbsp;码：</span>
+					<input id="password" type="text" />
+				</li>
+				<li>
+					<span class="code">验证码：</span>
+					<input id="codeinpts" class="codeinpt" type="text" />
+					<img id="loginImg" src="img/code.gif" />
+					<img id="newloginImg" class="new" src="img/new.gif" />
+					<a class="forgetpw" href="findpassword.html">忘记密码?</a>
+				</li>
+				<li>
+					<input id="loginbtn" type="button" value="登录" />
+					<input id="cancelbtn" type="button" value="取消" />
+				</li>
+				<li class="login-tips"></li>
+			</ul>
+		</div>
+	</body>
+	<script src="http://www.17sucai.com/preview/77697/2015-09-06/jiaoben1484/js/jQuery.1.8.2.min.js"></script>
+	<script src="js/swiper-3.4.2.min.js"></script>
+	<script src="js/HomePage/HomePageManager.js"></script>
+	<script src="js/ArticleSortManager.js"></script>
+	<script src="js/queryDecisionData.js"></script>
+	<script>
+		function loadHtmlContent(contentId) {
+			if (contentId == -1) {
+				contentId = window.location.search.toString();
+				contentId = contentId.substring(1, contentId.length);
+				contentId = contentId.split('&');
+			}
+			selectArticleDetails(contentId[0], function(result) {
+				if (result != null) {
+					var downUrl = result.accessory;
+					$('.decision-detail-content img').attr('src', result.imgUrl);
+					$('.decision-detail-content-div b').html(result.title);
+					$('.decision-detail-content-div span').html(result.addTime);
+					$('.decision-detail-content-div p').html(result.content);
+					$('.decision-detail-content-div-ul-rightli a').attr('href', downUrl);
+				}
+			});
+			//获取评论列表
+			getCommentList(contentId[0], function(result) {
+					var comment = result.content;
+					if (comment != null) {
+						var html = ""
+						for (var i = 0; i < comment.length; i++) {
+							var name = comment[i].clientUserName;
+							var comments = comment[i].content;
+							var time = comment[i].addTime;
+							html += '<li><img src="img/head.png" /><div><span><b style="color: #19517C;">' + name + '：</b><text>' + comments + '</text></span>' + '<span class="time">' + time + '</span></div></li>'
+						}
+						$('.comment').html(html);
+					}
+				})
+				//发表评论
+			var clientUserId = window.localStorage.userid;
+			$('.release-btn').on('click', function() {
+					var val = $('.release-inpt').val();
+					if (!clientUserId) {
+						$('.tips').css('display', 'block');
+						$('.tips').html('请先登录，再发表评论！');
+						setTimeout(function() {
+							$('.tips').css('display', 'none');
+						}, 1500)
+						return false;
+					}
+					if (!val) {
+						$('.release-inpt').attr('placeholder', '请至少输入一字的评论');
+						return false;
+					} else {
+						var data = {
+							clientUserId: clientUserId,
+							articleId: contentId[0],
+							content: val
+						}
+						$.ajax({
+							type: "post",
+							url: BaseUrl + '/frontEnd/makeComments',
+							async: true,
+							data: data,
+							success: function(data) {
+								console.log('data', data);
+								if (data.status == 0) {
+									$('.tips').css('display', 'block');
+									$('.tips').html('评论成功！');
+									$('.release-inpt').val('');
+									setTimeout(function() {
+										$('.tips').css('display', 'none');
+									}, 1500)
+									getCommentList(contentId[0], function(result) {
+										var comment = result.content;
+										if (comment != null) {
+											var html = ""
+											for (var i = 0; i < comment.length; i++) {
+												var name = comment[i].clientUserName;
+												var comments = comment[i].content;
+												var time = comment[i].addTime;
+												html += '<li><img src="img/head.png" /><div><span><b style="color: #19517C;">' + name + '：</b><text>' + comments + '</text></span>' + '<span class="time">' + time + '</span></div></li>'
+											}
+											$('.comment').html(html);
+										}
+									})
+								}
+							}
+						});
+					}
+				})
+				//提交调查问卷
+			var files = [];
+			var fd = new FormData();
+			$('#file').change(function() {
+				files = this.files;
+				console.log('files', files);
+				fd.append('type', 3);
+				fd.append('file', files[0]);
+				$.ajax({
+					url: BaseUrl + "/resource/upload",
+					type: "POST",
+					data: fd,
+					processData: false, // 不处理数据
+					contentType: false, // 不设置内容类型
+					success: function(res) {
+						if (res.status == 0) {
+							if (!clientUserId) {
+								$('.tips').css('display', 'block');
+								$('.tips').html('请先登录，再提交问卷！');
+								setTimeout(function() {
+									$('.tips').css('display', 'none');
+								}, 1500)
+								return false;
+							}
+							var data = {
+								clientUserId: clientUserId,
+								articleId: contentId[0],
+								questionnaireResultUrl: res.result
+							}
+							$.ajax({
+								type: "POST",
+								url: BaseUrl + "/frontEnd/submitQuestionnaire",
+								async: true,
+								data: data,
+								success: function(result) {
+									if (result.status == 0) {
+										$('.tips').css('display', 'block');
+										$('.tips').html('问卷上传成功!');
+										setTimeout(function() {
+											$('.tips').css('display', 'none');
+										}, 1500);
+									} else {
+										$('.tips').css('display', 'block');
+										$('.tips').html(result.message);
+										setTimeout(function() {
+											$('.tips').css('display', 'none');
+										}, 1500);
+									}
+								}
+							});
+						} else {
+							$('.tips').css('display', 'block');
+							$('.tips').html(res.message);
+							setTimeout(function() {
+								$('.tips').css('display', 'none');
+							}, 1500);
+							return false;
+						}
+					}
+				});
+			})
+		}
+		loadHtmlContent(-1);
+	</script>
+
+</html>

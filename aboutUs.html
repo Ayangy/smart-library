@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>湖北智库-关于我们</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+		<!--引用百度地图API-->
+		<style type="text/css">
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.iw_poi_title {
+				color: #CC5522;
+				font-size: 14px;
+				font-weight: bold;
+				overflow: hidden;
+				padding-right: 13px;
+				white-space: nowrap
+			}
+			
+			.iw_poi_content {
+				font: 12px arial, sans-serif;
+				overflow: visible;
+				padding-top: 4px;
+				white-space: -moz-pre-wrap;
+				word-wrap: break-word
+			}
+			#dituContent{
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top_nav">
+			<ul class="top_nav_center">
+				<li class="top_nav_icon webo_icon">
+					<a href="https://weibo.com/#_loginLayer_1513155457173"></a>
+				</li>
+				<li class="top_nav_icon wechat_icon">
+					<a href="#"></a>
+				</li>
+				<li class="top_nav_search">
+					<a class="btn-search border-radius5 right" onclick="searchByContentValue()">搜索</a>
+					<input type="text" class="input-230 border-radius5 right" placeholder="请输入关键字">
+				</li>
+				<li class="language_icon">
+					<a href="#">English</a>
+				</li>
+				<li class="login_icon">
+					<a href="#">登录</a>
+				</li>
+				<li class="register_icon">
+					<a href="register.html">注册</a>
+				</li>
+			</ul>
+		</div>
+		<div class="index-logo">
+			<div class="container clearfix">
+				<div class="logo_left">
+					<a href="index.html" class="top_logo"></a>
+					<div class="center_url">
+						<span class="zkurl">www.hbzhiku.org.cn</span>
+						<span class="zkduty"></span>
+					</div>
+					<div class="bottom_slogan">湖北省社会科学院主办 </div>
+				</div>
+				<div class="banner_right">
+					<img />
+				</div>
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="container" id="container">
+				<ul>
+					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
+					<li><a href="zkywList.html">智库动态</a></li>
+					<li><a href="hotspots.html">决策热点</a></li>
+					<li><a href="decision.html">决策调研</a></li>
+					<li><a href="forum.html">智库论坛</a></li>
+					<li><a href="expert.html">智库专家</a></li>
+					<li><a href="organizationHome.html">智库机构</a></li>
+					<li><a href="achievements.html">智库成果</a></li>
+					<li><a href="union.html">智库联盟</a></li>
+					<li><a href="database.html">数据库</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="listContent">
+			<div class="leftMenu" id="leftMenu">
+				<ul>
+					<li><a onclick="leftMenuClickEvent(event, this,1)">关于我们</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,2)">加入联盟</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,3)">法律顾问</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,4)">广告服务</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,5)">网站声明</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,6)">联系我们</a></li>
+				</ul>
+			</div>
+			<div class="listRight">
+				<div class="listNavbar" id="listNavbar">您当前位置：关于我们</div>
+				<div class="ach-search org-search expert-search">
+				</div>
+				<div style="width:858px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container relative">
+				<img class="logomap" src="img/bot.gif" />
+				<img class="logo" src="img/bottom-logo1.gif" />
+				<div class="foonterMain">
+					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+				</div>
+				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
+			</div>
+		</div>
+		<!--登录盒子-->
+		<div class="login-bg">
+			<ul class="login-box">
+				<li class="login-title">
+					<span>欢迎登录湖北智库网</span>
+					<span class="close-icon"></span>
+				</li>
+				<li class="login-username">
+					<span>用户名：</span>
+					<input id="username" type="text" placeholder="" />
+				</li>
+				<li>
+					<span>密&nbsp;码：</span>
+					<input id="password" type="text" />
+				</li>
+				<li>
+					<span class="code">验证码：</span>
+					<input id="codeinpts" class="codeinpt" type="text" />
+					<img id="loginImg" src="img/code.gif" />
+					<img id="newloginImg" class="new" src="img/new.gif" />
+					<a class="forgetpw" href="findpassword.html">忘记密码?</a>
+				</li>
+				<li>
+					<input id="loginbtn" type="button" value="登录" />
+					<input id="cancelbtn" type="button" value="取消" />
+				</li>
+				<li class="login-tips"></li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper-3.4.2.min.js"></script>
+	<script src="js/findOrganizationByLetter.js"></script>
+	<script src="js/HomePage/HomePageManager.js"></script>
+	<script src="js/ArticleSortManager.js"></script>
+
+	<script>
+		$(function() {
+			//创建和初始化地图函数：
+			function initMap() {
+				createMap(); //创建地图
+				setMapEvent(); //设置地图事件
+				addMapControl(); //向地图添加控件
+				addMarker(); //向地图中添加marker
+			}
+			//创建地图函数：
+			function createMap() {
+				var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+				var point = new BMap.Point(114.368933, 30.56978); //定义一个中心点坐标
+				map.centerAndZoom(point, 18); //设定地图的中心点和坐标并将地图显示在地图容器中
+				window.map = map; //将map变量存储在全局
+			}
+			//地图事件设置函数：
+			function setMapEvent() {
+				map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+				map.enableScrollWheelZoom(); //启用地图滚轮放大缩小
+				map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+				map.enableKeyboard(); //启用键盘上下左右键移动地图
+			}
+			//地图控件添加函数：
+			function addMapControl() {
+				//向地图中添加缩放控件
+				var ctrl_nav = new BMap.NavigationControl({
+					anchor: BMAP_ANCHOR_TOP_LEFT,
+					type: BMAP_NAVIGATION_CONTROL_LARGE
+				});
+				map.addControl(ctrl_nav);
+				//向地图中添加缩略图控件
+				var ctrl_ove = new BMap.OverviewMapControl({
+					anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+					isOpen: 1
+				});
+				map.addControl(ctrl_ove);
+				//向地图中添加比例尺控件
+				var ctrl_sca = new BMap.ScaleControl({
+					anchor: BMAP_ANCHOR_BOTTOM_LEFT
+				});
+				map.addControl(ctrl_sca);
+			}
+			//标注点数组
+			var markerArr = [{
+				title: "湖北省社会科学院",
+				content: "中国湖北武汉东湖路165号",
+				point: "114.369647|30.570091",
+				isOpen: 0,
+				icon: {
+					w: 21,
+					h: 21,
+					l: 0,
+					t: 0,
+					x: 6,
+					lb: 5
+				}
+			}];
+			//创建marker
+			function addMarker() {
+				for (var i = 0; i < markerArr.length; i++) {
+					var json = markerArr[i];
+					var p0 = json.point.split("|")[0];
+					var p1 = json.point.split("|")[1];
+					var point = new BMap.Point(p0, p1);
+					var iconImg = createIcon(json.icon);
+					var marker = new BMap.Marker(point, {
+						icon: iconImg
+					});
+					var iw = createInfoWindow(i);
+					var label = new BMap.Label(json.title, {
+						"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
+					});
+					marker.setLabel(label);
+					map.addOverlay(marker);
+					label.setStyle({
+						borderColor: "#808080",
+						color: "#333",
+						cursor: "pointer"
+					});
+					(function() {
+						var index = i;
+						var _iw = createInfoWindow(i);
+						var _marker = marker;
+						_marker.addEventListener("click", function() {
+							this.openInfoWindow(_iw);
+						});
+						_iw.addEventListener("open", function() {
+							_marker.getLabel().hide();
+						})
+						_iw.addEventListener("close", function() {
+							_marker.getLabel().show();
+						})
+						label.addEventListener("click", function() {
+							_marker.openInfoWindow(_iw);
+						})
+						if (!!json.isOpen) {
+							label.hide();
+							_marker.openInfoWindow(_iw);
+						}
+					})()
+				}
+			}
+			//创建InfoWindow
+			function createInfoWindow(i) {
+				var json = markerArr[i];
+				var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+				return iw;
+			}
+			//创建一个Icon
+			function createIcon(json) {
+				var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+					imageOffset: new BMap.Size(-json.l, -json.t),
+					infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+					offset: new BMap.Size(json.x, json.h)
+				})
+				return icon;
+			}
+			initMap(); //创建和初始化地图
+			var id = getQueryString('id') - 1;
+			console.log(id, typeof id);
+			$('#leftMenu ul').children('li').eq(id).children('a').addClass('currents');
+			$('#leftMenu ul').children('li').eq(id).siblings('li').children('a').removeClass('currents');
+			var title = $('#leftMenu ul').children('li').eq(id).children('a').text();
+			$("#listNavbar").html('您当前位置：' + title);
+			getOtherConfiguration(id, function(result) {
+				if (result != null) {
+					$('.expert-search').html(result.content);
+				} else {
+					$('.expert-search').html('');
+				}
+			})
+			if (id == 5) {
+				$('#dituContent').css('display', 'block');
+			}
+		})
+
+		function leftMenuClickEvent(event, obj, subid) {
+			if (obj != null) {
+				for (var i = 0; i < obj.parentElement.parentElement.childElementCount; i++) {
+					var aobj = obj.parentElement.parentElement.children[i].children[0];
+					aobj.className = null;
+					if (obj == aobj) {
+						continue;
+					}
+				}
+				obj.className = "currents";
+				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：" + obj.textContent;
+				getOtherConfiguration(subid - 1, function(result) {
+					if (result != null) {
+						$('.expert-search').html(result.content);
+					} else {
+						$('.expert-search').html('');
+					}
+				})
+				if (subid == 6) {
+					$('#dituContent').css('display', 'block');
+				}else{
+					$('#dituContent').css('display', 'none');
+				}
+			}
+		}
+	</script>
+
+</html>

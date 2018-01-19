@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>湖北智库-数据库</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div class="top_nav">
+			<ul class="top_nav_center">
+				<li class="top_nav_icon webo_icon">
+					<a href="https://weibo.com/#_loginLayer_1513155457173"></a>
+				</li>
+				<li class="top_nav_icon wechat_icon">
+					<a href="#"></a>
+				</li>
+				<li class="top_nav_search">
+					<a class="btn-search border-radius5 right" onclick="searchByContentValue()">搜索</a>
+					<input type="text" class="input-230 border-radius5 right" placeholder="请输入关键字">
+				</li>
+				<li class="language_icon">
+					<a href="#">English</a>
+				</li>
+				<li class="login_icon">
+					<a href="#">登录</a>
+				</li>
+				<li class="register_icon">
+					<a href="register.html">注册</a>
+				</li>
+			</ul>
+		</div>
+		<div class="index-logo">
+			<div class="container clearfix">
+				<div class="logo_left">
+					<a href="index.html" class="top_logo"></a>
+					<div class="center_url">
+						<span class="zkurl">www.hbzhiku.org.cn</span>
+						<span class="zkduty"></span>
+					</div>
+					<div class="bottom_slogan">湖北省社会科学院主办 </div>
+				</div>
+				<div class="banner_right">
+					<img />
+				</div>
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="container" id="container">
+				<ul>
+					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
+					<li><a href="zkywList.html">智库动态</a></li>
+					<li><a href="hotspots.html">决策热点</a></li>
+					<li><a href="decision.html">决策调研</a></li>
+					<li><a href="forum.html">智库论坛</a></li>
+					<li><a href="expert.html">智库专家</a></li>
+					<li><a href="organizationHome.html">智库机构</a></li>
+					<li><a href="achievements.html">智库成果</a></li>
+					<li><a href="union.html">智库联盟</a></li>
+					<li><a href="database.html" class="current">数据库</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="listContent">
+			<div class="leftMenu" id="leftMenu">
+				<ul>
+					<!--<li><a id="database" class="current oneon">数据库</a></li>-->
+					<!--<li><a href="#" class="two">党建</a></li>
+					<li><a href="#" class="two">社会</a></li>
+					<li><a href="#" class="two">生态</a></li>
+					<li><a href="#" class="two">政治</a></li>
+					<li><a href="#" class="two">经济</a></li>
+					<li><a href="#" class="two">文化</a></li>
+					<li><a href="#" class="two">热点专题</a></li>
+					<li><a href="#" class="two">国际关系</a></li>-->
+					<li><a href="database.html">专题库</a></li>
+					<li><a class="current">音视频</a></li>
+					<li><a href="booklist.html">咨询库</a></li>
+					<li><a href="expert.html">专家库</a></li>
+					<li><a href="union.html">联盟库</a></li>
+					<li><a href="achievements.html">成果库</a></li>
+				</ul>
+			</div>
+			<div class="listRight" id="videolist">
+				<div class="listNavbar">您当前位置：数据库 > 音视频</div>
+				<div class="ach-search database-search">
+					<div>
+						<label>关键人物：</label>
+						<input type="text" class="border-radius3 mr30 bgnone" placeholder="请输入关键人物" id="keyPeopleName">
+						<a  class="submit border-radius5 relative" style="width:40px;height:30px;line-height:30px;top:1px;" id="searchButton">查询</a>
+					</div>
+				</div>
+				<div class="video" id="findVideoNews">
+					<dl class="hidden videoList" id="videoListDl">
+						<li><dt><video src="http://47.104.8.66:8080/video/2017-12-11/6916b2e802d841e6a663df7ed6c5b831.mp4" controls=""></video></dt>
+							<dd>
+								<a href="listvideo-details.html?15" onclick="videonewsClickEvent(15)">
+									<h4>解读十九大报告七大战略之乡村振兴战略</h4>
+									<p>习近平同志在十九大报告中首度提出，“实施乡村振兴战略”是新时期做好“三农”工作的重要遵循。实施乡村振兴战略</p>
+								</a>
+							</dd>
+						</li>
+						<li><dt><video src="http://47.104.8.66:8080/video/2017-12-11/eaee2a46a4de444c820cd653b556021a.mp4" controls=""></video></dt>
+							<dd>
+								<a href="listvideo-details.html?16" onclick="videonewsClickEvent(16)">
+									<h4>邵维正：如何把握新时代我国社会的主要矛盾</h4>
+									<p>这个论断对于未来决胜全面建成小康社会,实现社会主义现代化和中华民族伟大复兴,都具有十分深远的意义。国防大学联合勤务学院教授邵维正作客中国社会科学网，为我们解读如何把握新时代我国社会的主要矛盾。</p>
+								</a>
+							</dd>
+						</li>
+						<li>
+							<dt><video src="http://47.104.8.66:8080/video/2017-12-11/6916b2e802d841e6a663df7ed6c5b831.mp4" controls=""></video></dt>
+							<dd>
+								<a href="listvideo-details.html?15" onclick="videonewsClickEvent(15)">
+									<h4>解读十九大报告七大战略之乡村振兴战略</h4>
+									<p>习近平同志在十九大报告中首度提出，“实施乡村振兴战略”是新时期做好“三农”工作的重要遵循。实施乡村振兴战略，是立足于社会主义初级阶段基本国情，着眼于确保如期全面建成小康社会和基本实现现代化、实现国家长治久安作出的重大决策部署。实施好这一战略，必须科学制定规划，强化制度供给，统筹推进农村经济建设、政治建设、文化建设、社会建设、生态文明建设，加快推进农业农村现代化，让亿万农民过上更加幸福美好的新生活。</p>
+								</a>
+							</dd>
+						</li>
+						<li><dt><video src="http://47.104.8.66:8080/video/2017-12-11/eaee2a46a4de444c820cd653b556021a.mp4" controls=""></video></dt>
+							<dd>
+								<a href="listvideo-details.html?16" onclick="videonewsClickEvent(16)">
+									<h4>邵维正：如何把握新时代我国社会的主要矛盾</h4>
+									<p>党的十九大在作出中国特色社会主义进入了新时代历史性判断的同时。</p>
+								</a>
+							</dd>
+						</li>
+					</dl>
+				</div>
+				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
+					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container relative">
+				<img class="logomap" src="img/bot.gif" />
+				<img class="logo" src="img/bottom-logo1.gif" />
+				<div class="foonterMain">
+					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+				</div>
+				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
+			</div>
+		</div>
+		<!--登录盒子-->
+		<div class="login-bg">
+			<ul class="login-box">
+				<li class="login-title">
+					<span>欢迎登录湖北智库网</span>
+					<span class="close-icon"></span>
+				</li>
+				<li class="login-username">
+					<span>用户名：</span>
+					<input id="username" type="text" placeholder="" />
+				</li>
+				<li>
+					<span>密&nbsp;码：</span>
+					<input id="password" type="text" />
+				</li>
+				<li>
+					<span class="code">验证码：</span>
+					<input id="codeinpts" class="codeinpt" type="text" />
+					<img id="loginImg" src="img/code.gif" />
+					<img id="newloginImg" class="new" src="img/new.gif" />
+					<a class="forgetpw" href="findpassword.html">忘记密码?</a>
+				</li>
+				<li>
+					<input id="loginbtn" type="button" value="登录" />
+					<input id="cancelbtn" type="button" value="取消" />
+				</li>
+				<li class="login-tips"></li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper-3.4.2.min.js"></script>
+	<script src="js/HomePage/HomePageManager.js"></script>
+	<script>
+		function videoNewsClickEvent(subid) {
+			//        alert(subid)
+		}
+		findVideoNews(0, 10, '', function(result) {
+			var content = '';
+			for (var j = 0; j < result.length; j++) {
+				var subObj = result[j];
+				content += '<li><dt><video src="' + subObj.videoUrl + '" controls=""></video></dt>';
+				content += '<dd><a href="listvideo-details.html?15" onclick="videonewsClickEvent(' + subObj.id + ')">';
+				content += ' <h4>' + subObj.title + '</h4>';
+				content += '<p>' + subObj.content + '</p>';
+				content += '</a></dd></li>';
+			}
+			$('#videoListDl').html(content);
+		});
+
+		function loadHtmlContent() {}
+		loadHtmlContent();
+		//音视频搜索
+		$('#searchButton').click(function() {
+				var txt = $('#keyPeopleName').val()
+				findVideoNews(0, 10, txt, function(result) {
+					if (result && result.length > 0) {
+						var content = '';
+						for (var j = 0; j < result.length; j++) {
+							var subObj = result[j];
+							content += '<li><dt><video src="' + subObj.videoUrl + '" controls=""></video></dt>';
+							content += '<dd><a href="listvideo-details.html?15" onclick="videonewsClickEvent(' + subObj.id + ')">';
+							content += ' <h4>' + subObj.title + '</h4>';
+							content += '<p>' + subObj.content + '</p>';
+							content += '</a></dd></li>';
+						}
+						$('#videoListDl').html(content);
+					} else {
+						$('#videoListDl').html('<div style="text-align: center;\n' +
+							'    color: #CCC;\n' +
+							'    margin-top: 75px;font-size: 14px;"> 暂无数据!</div>');
+					}
+				});
+			})
+	
+	</script>
+
+</html>

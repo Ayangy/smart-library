@@ -1,30 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>注册</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        html,body{background-color: #f4f4f4;}
-    </style>
-</head>
-<body>
-    <div class="user-box">
-        <div class="box-title"><img src="img/logo.png" width="160" alt=""> 已有账号，<a href="login.html">马上登录</a> | <a href="index.html">返回首页</a></div>
-        <div class="user-form">
-            <h3>注册会员</h3>
-            <ul>
-                <li><label>用户名</label><input class="username" type="text" placeholder="请输入用户名4-8个字符"></li>
-                <li><label>密码</label><input class="password" type="password" placeholder="请输入登录密码6-8个字符"></li>
-                <li><label>确认密码</label><input class="passwordAgin" type="password" placeholder="请再次输入密码"></li>
-                <li><label>验证码</label><input type="text" placeholder="请输入下面图片的字符，不区分大小写"></li>
-                <li class="center p10_0">看不清换一张</li>
-                <li class="center"><a href="##" class="submit border-radius5">提交</a></li>
-            </ul>
-        </div>
-        <p>京ICP备11017824号-4 / 京ICP证130164号 北京市公安局朝阳分局备案编号:110105000501<br>Copyright © 2016-2017 ZCOOL 中文English</p>
-    </div>
-</body>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>湖北智库-注册</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			html,
+			body {
+				background-color: #f4f4f4;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top_nav">
+			<ul class="top_nav_center">
+				<li class="top_nav_icon webo_icon">
+					<a href="https://weibo.com/#_loginLayer_1513155457173"></a>
+				</li>
+				<li class="top_nav_icon wechat_icon">
+					<a href="#"></a>
+				</li>
+				<li class="top_nav_search">
+					<a class="btn-search border-radius5 right" onclick="searchByContentValue()">搜索</a>
+					<input type="text" class="input-230 border-radius5 right" placeholder="请输入关键字">
+				</li>
+				<li class="language_icon">
+					<a href="#">English</a>
+				</li>
+				<li class="login_icon">
+					<a href="#">登录</a>
+				</li>
+				<li class="register_icon">
+					<a href="register.html">注册</a>
+				</li>
+			</ul>
+		</div>
+		<div class="index-logo">
+			<div class="container clearfix">
+				<div class="logo_left">
+					<a href="index.html" class="top_logo"></a>
+					<div class="center_url">
+						<span class="zkurl">www.hbzhiku.org.cn</span>
+						<span class="zkduty"></span>
+					</div>
+					<div class="bottom_slogan">湖北省社会科学院主办 </div>
+				</div>
+				<div class="banner_right">
+					<img />
+				</div>
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="container" id="container">
+				<ul>
+					<li><a href="zkywList.html">智库动态</a></li>
+					<li><a href="hotspots.html">决策热点</a></li>
+					<li><a href="decision.html">决策调研</a></li>
+					<li><a href="forum.html">智库论坛</a></li>
+					<li><a href="expert.html">智库专家</a></li>
+					<li><a href="organization.html">智库机构</a></li>
+					<li><a href="achievements.html">智库成果</a></li>
+					<li><a href="union.html">智库联盟</a></li>
+					<li><a href="database.html">数据库</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="regisbox">
+			<div class="regis-title">欢迎注册湖北智库网</div>
+			<div class="regis-tips">(带<b style="color: red;">*</b>为必填项)</div>
+			<ul>
+				<li>
+					<span class="email">&nbsp;&nbsp;<b style="color: red;">*</b>邮箱：</span>
+					<input id="email" type="text" />
+					<span id="emailtips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">邮箱将作为您的登录账户，提交后不可修改</span>
+				</li>
+				<li>
+					<span class="email">&nbsp;&nbsp;<b style="color: red;">*</b>密码：</span>
+					<input maxlength="12" id="pw" type="text" />
+					<span id="pwtips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+				<li>
+					<span class="email"><b style="color: red;">*</b>确认密码：</span>
+					<input id="surepw" type="text" />
+					<span id="surepwtips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+
+				<li>
+					<span><b style="color: red;margin-left:116px;">*</b>职业类别：</span>
+					<select id="category">
+						<option value="0">请选择职业类别</option>
+						<option value="1">国家机关、党群组织、企业、事业单位负责人</option>
+						<option value="2">专业技术人员</option>
+						<option value="3">办事人员和有关人员</option>
+						<option value="4">商业、服务业人员</option>
+						<option value="5">农、林、牧、渔、水利业生产人员</option>
+						<option value="6">生产、运输设备操作人员及有关人员</option>
+						<option value="7">军人</option>
+						<option value="8">不便分类的其他从业人员</option>
+					</select>
+					<span id="categorytips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+				</li>
+				<li>
+					<span><b style="color:red;margin-left:116px;">*</b>所在地区：</span>
+					<select id="dist">
+						<option value="0">省、直辖市、港澳台地区</option>
+						<option value="1">北京市</option>
+						<option value="2">天津市</option>
+						<option value="3">上海市</option>
+						<option value="4">重庆市</option>
+						<option value="5">河北省</option>
+						<option value="6">山西省</option>
+						<option value="7">内蒙古</option>
+						<option value="8">辽宁省</option>
+						<option value="9">吉林省</option>
+						<option value="10">黑龙江省</option>
+						<option value="11">江苏省</option>
+						<option value="12">浙江省</option>
+						<option value="13">安徽省</option>
+						<option value="14">福建省</option>
+						<option value="15">江西省</option>
+						<option value="16">山东省</option>
+						<option value="17">河南省</option>
+						<option value="18">湖北省</option>
+						<option value="19">湖南省</option>
+						<option value="20">四川省</option>
+						<option value="21">贵州省</option>
+						<option value="22">云南省</option>
+						<option value="23">西藏</option>
+						<option value="24">陕西省</option>
+						<option value="25">甘肃省</option>
+						<option value="26">青海省</option>
+						<option value="27">宁夏</option>
+						<option value="28">新疆</option>
+						<option value="29">港澳台</option>
+					</select>
+					<span id="disttips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+				<li>
+					<span class="code"><b style="color: red;margin-left:106px;">*</b>验证码：</span>
+					<input id="code" maxlength="4" class="codeinpt" type="text" />
+					<img id="codeimg" src="img/code.gif" />
+					<img id="newimg" class="new" src="img/new.gif" />
+					<span id="codetips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+				<li class="user-tips">尊敬的用户,您好,为了使您在智库网有更好的体验,建议您填写以下内容。根据您填写的内容,我们将为您提供个性化定制服务。</li>
+				<li>
+					<span class="email"><b style="color: red;">*</b>真实姓名：</span>
+					<input maxlength="14" id="realname" type="text" />
+					<span id="realnametips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+				<li>
+					<span class="email">&nbsp;&nbsp;<b style="color: red;">*</b>电话：</span>
+					<input maxlength="11" id="telephone" type="text" />
+					<span id="teletips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+				<li>
+					<span class="email"><b style="color: red;">*</b>工作单位：</span>
+					<input id="workunit" type="text" />
+					<span id="workplacetips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+				<li>
+					<span class="company"><b style="color: red;margin-left:110px;">*</b>如单位为智库机构请选择：</span>
+					<select id="company">
+						<option value="0">请选择智库机构</option>
+						<option value="1">党政智库</option>
+						<option value="2">社科院智库</option>
+						<option value="3">党校（行政学院）智库</option>
+						<option value="4">省级专门智库</option>
+						<option value="5">省级改革智库</option>
+						<option value="6">高校智库</option>
+						<option value="7">社会智库</option>
+					</select>
+					<span id="companytips" style="color:#8B8B8B; font-weight: bold;font-family: simsun;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</li>
+				<li>
+					<input class="submitbtn" type="button" value="注册" />
+				</li>
+			</ul>
+		</div>
+		<div class="footer">
+			<div class="container relative">
+				<img class="logomap" src="img/bot.gif" />
+				<img class="logo" src="img/bottom-logo1.png" />
+				<div class="foonterMain">
+					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+				</div>
+				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
+			</div>
+		</div>
+		<!--登录盒子-->
+		<div class="login-bg">
+			<ul class="login-box">
+				<li class="login-title">
+					<span>欢迎登录湖北智库网</span>
+					<span class="close-icon"></span>
+				</li>
+				<li class="login-username">
+					<span>用户名：</span>
+					<input id="username" type="text" placeholder="" />
+				</li>
+				<li>
+					<span>密&nbsp;码：</span>
+					<input id="password" type="text" />
+				</li>
+				<li>
+					<span class="code">验证码：</span>
+					<input id="codeinpts" class="codeinpt" type="text" />
+					<img id="loginImg" src="img/code.gif" />
+					<img id="newloginImg" class="new" src="img/new.gif" />
+					<a class="forgetpw" href="findpassword.html">忘记密码?</a>
+				</li>
+				<li>
+					<input id="loginbtn" type="button" value="登录" />
+					<input id="cancelbtn" type="button" value="取消" />
+				</li>
+				<li class="login-tips"></li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/HttpRequest.js"></script>
+	<script src="js/HomePage/HomePageManager.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			//注册
+			var categoryArr = ['请选择职业类别', '国家机关、党群组织、企业、事业单位负责人', '专业技术人员', '办事人员和有关人员', '商业、服务业人员', '农、林、牧、渔、水利业生产人员', '生产、运输设备操作人员及有关人员', '军人', '不便分类的其他从业人员'];
+			var disArr = ['省、直辖市、港澳台地区', '北京市', '天津市', '上海市', '上海市', '河北省', '重庆市', '河北省', '山西省', '内蒙古',
+				'辽宁省', '吉林省', '黑龙江省', '江苏省', '浙江省', '安徽省', '福建省', '江西省', '山东省', '河南省', '湖北省',
+				'湖南省', '四川省', '贵州省', '云南省', '西藏', '陕西省', '甘肃省', '青海省', '宁夏', '新疆', '港澳台'
+			];
+			var comArr = ['请选择智库机构', '党政智库', '社科院智库', '党校（行政学院）智库', '省级专门智库','省级改革智库','高校智库','社会智库'];
+			var email = $('#email').val();
+			var pw = $('#pw').val();
+			$('#cancelbtn,.close-icon').click(function() {
+				$('.login-bg').css('display', 'none');
+				$('#username').val('');
+				$('#password').val('');
+			});
+			$('#email').change(function() {
+				var flag = isEmail($('#email').val());
+				if (!flag) {
+					$('#email').val('');
+					$('#emailtips').html('请填写正确的邮箱格式&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#emailtips').css('color', 'red');
+					return;
+				} else {
+					$('#emailtips').html('邮箱将作为您的登录账户,提交后不可修改');
+					$('#emailtips').css('color', '#8B8B8B');
+				}
+			});
+			$('#pw').change(function() {
+				console.log($('#pw').val().length);
+				var length = $('#pw').val().length;
+				var regString = /[a-zA-Z]+/;
+				var regNumber = /\d+/;
+				if (length < 6) {
+					$('#pwtips').html('请填写数字及字母,长度大于6少于12的密码');
+					$('#pwtips').css('color', 'red');
+				} else if (!(regNumber.test($('#pw').val()) && regString.test($('#pw').val()))) {
+					console.log('判断', regNumber.test($('#pw').val()) && regString.test($('#pw').val()));
+					$('#pwtips').html('密码中必须包含字母及数字&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#pwtips').css('color', 'red');
+				} else {
+					$('#pwtips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+				}
+			});
+			$('#surepw').change(function() {
+				var pw = $('#pw').val();
+				var surepw = $('#surepw').val();
+				if (surepw != pw) {
+					$('#surepwtips').html('两次密码不一致，请重新输入&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#surepw').val('');
+					$('#surepwtips').css('color', 'red');
+				} else {
+					$('#surepwtips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+				}
+			});
+			$('#newimg,#newloginImg').on('click', function() {
+				$.post(BaseUrl + "/frontEnd/getCaptcha", function(res) {
+					code = res.result.captcha;
+					$('#codeimg').attr('src', res.result.img);
+					$('#loginImg').attr('src', res.result.img);
+				})
+			})
+			$('#code').change(function() {
+				var codes = $('#code').val();
+				if (codes != code) {
+					$('#codetips').html('验证码错误&nbsp;');
+					$('#codetips').css('color', 'red');
+					return;
+				} else {
+					$('#codetips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+				}
+			})
+			$('#realname').change(function() {
+				var realname = $('#realname').val();
+				var regString = /[a-zA-Z]+/;
+				var regNumber = /\d+/;
+				var length = realname.length;
+				if (!realname) {
+					$('#realnametips').html('请输入真实姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#realnametips').css('color', 'red');
+				} else if ((regNumber.test(realname) || regString.test(realname))) {
+					$('#realnametips').html('请确认您输入的姓名合法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#realnametips').css('color', 'red');
+				} else {
+					$('#realnametips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+				}
+			});
+			$('#telephone').change(function() {
+				var phone = $('#telephone').val();
+				var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+				var length = phone.length
+				if (!length) {
+					$('#teletips').html('电话号码不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#teletips').css('color', 'red');
+					return;
+				} else if (length < 11) {
+					$('#teletips').html('电话号码不能少于11位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#teletips').css('color', 'red');
+					return;
+				} else if (!myreg.test(phone)) {
+					$('#teletips').html('请输入有效的电话号码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#teletips').css('color', 'red');
+					return;
+				} else {
+					$('#teletips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+				}
+			});
+			$('#workunit').change(function() {
+				var workunit = $('#workunit').val();
+				if (!workunit) {
+					$('#workunit').html('工作地址不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#workunit').css('color', 'red');
+				}
+			});
+			$('.submitbtn').on('click', function() {
+				var email = $('#email').val();
+				var pw = $('#pw').val();
+				var surepw = $('#surepw').val();
+				var codes = $('#code').val();
+				var dist = $('#dist').val();
+				var cate = $('#category').val();
+				var realname = $('#realname').val();
+				var phone = $('#telephone').val();
+				var workunit = $('#workunit').val();
+				var company = $('#company').val();
+				var catecontent, discontent, comcontent;
+				if (!email) {
+					$('#emailtips').html('邮箱地址不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#emailtips').css('color', 'red');
+					return;
+				}
+				if (!pw) {
+					$('#pwtips').html('密码不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#pwtips').css('color', 'red');
+					return;
+				}
+				if (!surepw) {
+					$('#surepwtips').html('确认密码不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#surepwtips').css('color', 'red');
+					return;
+				}
+				if (cate == 0) {
+					$('#categorytips').html('请选择职业类别');
+					$('#categorytips').css('color', 'red');
+					return;
+				} else {
+					$('#categorytips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					catecontent = categoryArr[parseInt(cate)];
+					console.log('职业类别', catecontent);
+				}
+				if (dist == 0) {
+					$('#disttips').html('请选择地区&nbsp;&nbsp;');
+					$('#disttips').css('color', 'red');
+					return;
+				} else {
+					$('#disttips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					discontent = disArr[parseInt(dist)];
+					console.log('地区', discontent);
+				}
+				if (!codes) {
+					$('#codetips').html('请填写验证码');
+					$('#codetips').css('color', 'red');
+					return;
+				} else if (codes != code) {
+					$('#codetips').html('验证码错误&nbsp;');
+					$('#codetips').css('color', 'red');
+					return;
+				}
+				if (!realname) {
+					$('#realnametips').html('请输入真实姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#realnametips').css('color', 'red');
+				}
+				if (company == 0) {
+					$('#companytips').html('请选择单位&nbsp;&nbsp;');
+					$('#companytips').css('color', 'red');
+					return;
+				} else {
+					$('#companytips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					comcontent = comArr[parseInt(company)];
+					console.log('公司', comcontent);
+				}
+				var data = JSON.stringify({
+					email: email,
+					pwd: surepw,
+					name: realname,
+					jobType: catecontent,
+					region: discontent,
+					phoneNumber: phone,
+					workUnit: workunit,
+					unitType: comcontent
+				})
+				$.ajax({
+					type: "post",
+					url: BaseUrl + "/clientUser/registeredUser",
+					async: true,
+					data: data,
+					dataType: "JSON",
+					contentType: 'application/json;charset=UTF-8',
+					success: function(data) {
+						if (data.status == 0) {
+							$('.regisbox').html('<a href='+gotoEmail(email)+'>'+data.message + '</a>');
+							$('.regisbox').css('color', 'green');
+							$('.regisbox').css('padding-top', '200px');
+						} else if (data.status == -1) {
+							$('#emailtips').html(data.message + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+							$('#emailtips').css('color', 'red');
+							$('#email').val('');
+						}
+					},
+					error: function() {
+						console.log('异常');
+					}
+				});
+			})
+
+			function isEmail(str) {
+				reg = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/g
+				return reg.test(str)
+			}
+					function gotoEmail($mail) {
+			$t = $mail.split('@')[1];
+			$t = $t.toLowerCase();
+			if ($t == '163.com') {
+				return 'http://mail.163.com';
+			} else if ($t == 'vip.163.com') {
+				return 'http://www.vip.163.com';
+			} else if ($t == '126.com') {
+				return 'http://mail.126.com';
+			} else if ($t == 'qq.com' || $t == 'vip.qq.com' || $t == 'foxmail.com') {
+				return 'http://mail.qq.com';
+			} else if ($t == 'gmail.com') {
+				return 'http://mail.google.com';
+			} else if ($t == 'sohu.com') {
+				return 'http://mail.sohu.com';
+			} else if ($t == 'tom.com') {
+				return 'http://mail.tom.com';
+			} else if ($t == 'vip.sina.com') {
+				return 'http://vip.sina.com';
+			} else if ($t == 'sina.com.cn' || $t == 'sina.com') {
+				return 'http://mail.sina.com.cn';
+			} else if ($t == 'tom.com') {
+				return 'http://mail.tom.com';
+			} else if ($t == 'yahoo.com.cn' || $t == 'yahoo.cn') {
+				return 'http://mail.cn.yahoo.com';
+			} else if ($t == 'tom.com') {
+				return 'http://mail.tom.com';
+			} else if ($t == 'yeah.net') {
+				return 'http://www.yeah.net';
+			} else if ($t == '21cn.com') {
+				return 'http://mail.21cn.com';
+			} else if ($t == 'hotmail.com') {
+				return 'http://www.hotmail.com';
+			} else if ($t == 'sogou.com') {
+				return 'http://mail.sogou.com';
+			} else if ($t == '188.com') {
+				return 'http://www.188.com';
+			} else if ($t == '139.com') {
+				return 'http://mail.10086.cn';
+			} else if ($t == '189.cn') {
+				return 'http://webmail15.189.cn/webmail';
+			} else if ($t == 'wo.com.cn') {
+				return 'http://mail.wo.com.cn/smsmail';
+			} else if ($t == '139.com') {
+				return 'http://mail.10086.cn';
+			} else {
+				return '';
+			}
+		};
+		}
+	</script>
+
 </html>

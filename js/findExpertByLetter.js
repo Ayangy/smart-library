@@ -34,7 +34,7 @@ function findExpertByLetter(letter,countryType,callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+               // alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -59,7 +59,7 @@ function queryAnExpert(expertId, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -71,10 +71,14 @@ function findExpertByCondition(field, keyword, callBack) {
 
     var params = '';
     if (field != null) {
-        if (keyword != null) {
-            if (params.length == 0) {
-                params += '?field='+ field + '&keyword=' + keyword;
-            }
+        params += '?field='+field;
+    }
+    if (keyword != null) {
+        if (params.length == 0) {
+            params += '?keyword='+keyword;
+        }
+        else {
+            params += '&keyword='+keyword;
         }
     }
     http.get(BaseUrl+'/frontEnd/findExpertByCondition'+params,function (err, result) {
@@ -92,7 +96,7 @@ function findExpertByCondition(field, keyword, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;

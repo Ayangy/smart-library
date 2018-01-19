@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/*课程介绍 轮播*/
+.friend {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.mr_frbox {
+    height: 100%;
+}
+
+.mr_frBtnL {
+    cursor: pointer;
+    display: inline;
+    float: left;
+    margin:50px 10px 0 0;
+}
+
+.mr_frUl {
+    float: left;
+    height: 100%;
+    width: 92%;
+    margin-left: 10px;
+}
+
+.mr_frBtnR {
+    float: right;
+    margin-top:50px;
+    cursor: pointer;
+}
+
+.mr_frUl ul li {
+    display: inline;
+    float: left; /*height:389px;*/
+    width: 150px ;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.mr_frUl ul li p{
+    margin-top: 12px;
+    width: 98px;
+    text-align: center;
+    font-weight: bold;
+    font-family: simsun;
+    color: #0F0F0F;
+    margin-left: 23px;
+}
+
+.mr_frUl ul li a img { /*display:block;*/
+    width: 98px;
+    height: 118px;
+}

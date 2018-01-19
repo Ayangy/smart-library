@@ -4,7 +4,7 @@
 
 document.write("<script language=\"javascript\" src=\"js/HttpRequest.js\"><\/script>");
 
-function findOrganizationByLetter(letter,OrgType,callBack) {
+function findOrganizationByLetter(letter,OrgType,callBack,organizationType) {
     var params = '';
     if (letter != null) {
         params += '?letter='+letter;
@@ -17,7 +17,12 @@ function findOrganizationByLetter(letter,OrgType,callBack) {
             params += '&type='+OrgType;
         }
     }
+
+    if(organizationType){
+        params += '&organizationType='+organizationType;
+    }
     http.get(BaseUrl+"/frontEnd/findOrganizationByLetter"+params, function (err,result) {
+       // console.log(result)
         if (result == null) {
             return;
         }
@@ -32,7 +37,7 @@ function findOrganizationByLetter(letter,OrgType,callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+               // alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -40,7 +45,7 @@ function findOrganizationByLetter(letter,OrgType,callBack) {
     });
 }
 
-function findOrganizationByCondition(field,keyword,organizationType,callBack) {
+function findOrganizationByCondition(field,keyword,organizationType,callBack,type) {
     var params = '';
     if (field != null) {
         params += '?field='+field;
@@ -61,6 +66,9 @@ function findOrganizationByCondition(field,keyword,organizationType,callBack) {
             params += '&organizationType='+organizationType;
         }
     }
+    if(type == 0){
+        params += '&type=0';
+    }
     http.get(BaseUrl+"/frontEnd/findOrganizationByCondition"+params, function (err,result) {
         if (result == null) {
             return;
@@ -76,7 +84,7 @@ function findOrganizationByCondition(field,keyword,organizationType,callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -113,7 +121,7 @@ function getOrganizationNotice(orgId, textTypeId, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -166,7 +174,7 @@ function getOrganizationActivity(orgId, textTypeId, index, size, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -190,7 +198,7 @@ function getThisInstitution(callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -218,7 +226,7 @@ function findInstitutionByid(organizationId, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -271,7 +279,7 @@ function getInstitutionArticle(orgId, textTypeId, index, size, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;

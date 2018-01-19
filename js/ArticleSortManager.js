@@ -28,11 +28,12 @@ document.write("<script language=\"javascript\" src=\"js/HttpRequest.js\"><\/scr
 function getArticleSonSort(parentId, callBack) {
 
     http.get(BaseUrl+"/articleSort/getArticleSonSort?parentId="+parentId, function (err, result) {
-
+//      console.log('result',result)
         if (result == null) {
             return;
         }
         var status = result.status;
+//      console.log('返回',result)
         switch (status) {
             case 0: {
                 var resultObj = result.result;
@@ -43,7 +44,7 @@ function getArticleSonSort(parentId, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -51,11 +52,8 @@ function getArticleSonSort(parentId, callBack) {
     });
 }
 
-// 分页查询当前类型文章
-function selectArticleSort(textTypeId, parentId,index,callBack) {
-
-    http.get(BaseUrl+"/frontEnd/articleSort?textTypeId="+textTypeId+'&parentId='+parentId, function (err, result) {
-
+function selectArticleOrgSort(organizationType,type,callBack) {
+    http.get(BaseUrl+"/frontEnd/findByOrganizationType?organizationType="+organizationType+'&type='+type, function (err, result) {
         if (result == null) {
             return;
         }
@@ -71,7 +69,36 @@ function selectArticleSort(textTypeId, parentId,index,callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
+                callBack && callBack(null);
+            }
+                break;
+        }
+    });
+}
+// 分页查询当前类型文章
+function selectArticleSort(textTypeId, parentId,index,callBack,size) {
+    if(!size){
+        size = 10;
+    }
+    http.get(BaseUrl+"/frontEnd/articleSort?textTypeId="+textTypeId+'&parentId='+parentId+'&index='+index+'&size='+size, function (err, result) {
+		console.log('查询文章',result);
+        if (result == null) {
+            return;
+        }
+        var status = result.status;
+        switch (status) {
+            case 0: {
+                var resultObj = result.result;
+                if (resultObj && resultObj.length == 0) {
+                    resultObj = null;
+                }
+                sonsortArr = resultObj;
+                callBack && callBack(resultObj,result);
+            }
+                break;
+            default: {
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -98,7 +125,7 @@ function selectArticleDetails(articleId,callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+               // alert(result.message);
                 callBack && callBack(null);
             }
                 break;
@@ -108,8 +135,7 @@ function selectArticleDetails(articleId,callBack) {
 
 function selectVideoDetails(videoId, callBack) {
 
-    http.get(BaseUrl+"/frontEnd/getVideoDetails?id="+videoId, function (err, result) {
-
+    http.get(BaseUrl+"/frontEnd/getVideoDetails?id="+videoId, function (err, result){
         if (result == null) {
             return;
         }
@@ -125,7 +151,7 @@ function selectVideoDetails(videoId, callBack) {
             }
                 break;
             default: {
-                alert(result.message);
+                //alert(result.message);
                 callBack && callBack(null);
             }
                 break;
