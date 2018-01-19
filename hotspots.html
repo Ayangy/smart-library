@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="./js/pagination.min.js"></script>
 	</head>
-
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -77,12 +75,6 @@
 				<div class="listNavbar">您当前位置：决策热点 > 区域发展战略</div>
 				<ul id="listRight">
 				</ul>
-				<!--<div class="pages">
-					<a href="##">上一页</a>
-					<a href="##">1</a><a href="##">2</a><a href="##">3</a><a href="##">4</a><a href="##">5</a>
-					<a href="##">6</a><a href="##">7</a><a href="##">8</a><a href="##">9</a><a href="##">10</a>
-					<a href="##">下一页</a>
-				</div>-->
 				<div id="pagination_7"></div>
 				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
 					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
@@ -94,7 +86,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -134,7 +126,6 @@
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script type="text/javascript">
 		var _subid = 12;
-
 		function loadHtmlContent() {
 			getArticleSonSort(11, function(result) {
 				if (result != null) {
@@ -175,9 +166,6 @@
 		function ArticleSort(subid, parentId, nowPage, title) {
 			selectArticleSort(subid, parentId, nowPage, function(result,res) {
 				var totalPages = res.page.totalPages;
-				console.log('------------subid-----------', subid);
-				console.log('---------totalPages---------', res.page.totalPages);
-				console.log('---------totalPages1---------', totalPages);
 				if (result != null) {
 					var content = '';
 					for (var i = 0; i < result.length; i++) {

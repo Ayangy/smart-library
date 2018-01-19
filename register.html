@@ -190,7 +190,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.png" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -237,7 +237,7 @@
 				'辽宁省', '吉林省', '黑龙江省', '江苏省', '浙江省', '安徽省', '福建省', '江西省', '山东省', '河南省', '湖北省',
 				'湖南省', '四川省', '贵州省', '云南省', '西藏', '陕西省', '甘肃省', '青海省', '宁夏', '新疆', '港澳台'
 			];
-			var comArr = ['请选择智库机构', '党政智库', '社科院智库', '党校（行政学院）智库', '省级专门智库','省级改革智库','高校智库','社会智库'];
+			var comArr = ['请选择智库机构', '党政智库', '社科院智库', '党校（行政学院）智库', '省级专门智库', '省级改革智库', '高校智库', '社会智库'];
 			var email = $('#email').val();
 			var pw = $('#pw').val();
 			$('#cancelbtn,.close-icon').click(function() {
@@ -267,7 +267,7 @@
 					$('#pwtips').css('color', 'red');
 				} else if (!(regNumber.test($('#pw').val()) && regString.test($('#pw').val()))) {
 					console.log('判断', regNumber.test($('#pw').val()) && regString.test($('#pw').val()));
-					$('#pwtips').html('密码中必须包含字母及数字&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					$('#pwtips').html('密码中必须包含字母及数字&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#pwtips').css('color', 'red');
 				} else {
 					$('#pwtips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
@@ -296,7 +296,6 @@
 				if (codes != code) {
 					$('#codetips').html('验证码错误&nbsp;');
 					$('#codetips').css('color', 'red');
-					return;
 				} else {
 					$('#codetips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 				}
@@ -323,15 +322,15 @@
 				if (!length) {
 					$('#teletips').html('电话号码不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#teletips').css('color', 'red');
-					return;
+					return false;
 				} else if (length < 11) {
 					$('#teletips').html('电话号码不能少于11位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#teletips').css('color', 'red');
-					return;
+					return false;
 				} else if (!myreg.test(phone)) {
 					$('#teletips').html('请输入有效的电话号码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#teletips').css('color', 'red');
-					return;
+					return false;
 				} else {
 					$('#teletips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 				}
@@ -341,6 +340,7 @@
 				if (!workunit) {
 					$('#workunit').html('工作地址不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#workunit').css('color', 'red');
+					return false;
 				}
 			});
 			$('.submitbtn').on('click', function() {
@@ -358,57 +358,58 @@
 				if (!email) {
 					$('#emailtips').html('邮箱地址不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#emailtips').css('color', 'red');
-					return;
+					return false;
 				}
 				if (!pw) {
 					$('#pwtips').html('密码不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#pwtips').css('color', 'red');
-					return;
+					return false;
 				}
 				if (!surepw) {
 					$('#surepwtips').html('确认密码不能为空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#surepwtips').css('color', 'red');
-					return;
+					return false;
 				}
 				if (cate == 0) {
 					$('#categorytips').html('请选择职业类别');
 					$('#categorytips').css('color', 'red');
-					return;
+					return false;
 				} else {
 					$('#categorytips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					catecontent = categoryArr[parseInt(cate)];
-					console.log('职业类别', catecontent);
+//					console.log('职业类别', catecontent);
 				}
 				if (dist == 0) {
 					$('#disttips').html('请选择地区&nbsp;&nbsp;');
 					$('#disttips').css('color', 'red');
-					return;
+					return false;
 				} else {
 					$('#disttips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					discontent = disArr[parseInt(dist)];
-					console.log('地区', discontent);
+//					console.log('地区', discontent);
 				}
 				if (!codes) {
 					$('#codetips').html('请填写验证码');
 					$('#codetips').css('color', 'red');
-					return;
+					return false;
 				} else if (codes != code) {
 					$('#codetips').html('验证码错误&nbsp;');
 					$('#codetips').css('color', 'red');
-					return;
+					return false;
 				}
 				if (!realname) {
 					$('#realnametips').html('请输入真实姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					$('#realnametips').css('color', 'red');
+					return false;
 				}
 				if (company == 0) {
 					$('#companytips').html('请选择单位&nbsp;&nbsp;');
 					$('#companytips').css('color', 'red');
-					return;
+					return false;
 				} else {
 					$('#companytips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					comcontent = comArr[parseInt(company)];
-					console.log('公司', comcontent);
+//					console.log('公司', comcontent);
 				}
 				var data = JSON.stringify({
 					email: email,

@@ -12,7 +12,6 @@
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="./js/pagination.min.js"></script>
 	</head>
-
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -133,7 +132,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792493 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -171,16 +170,13 @@
 	</body>
 	<script src="js/ArticleSortManager.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
-
 	<script src="js/findResultByCriteria.js"></script>
 	<script>
 		var _subid = 38;
 		var sort = 0;
-
 		function loadHtmlContent() {
 			getArticleSonSort(28, function(result) {
 				if (result != null) {
-					console.log('获取到信息', result);
 					var firstId = result[0].id;
 					var firstTitle = result[0].name;
 					var content = '<ul>';
@@ -239,9 +235,8 @@
 					var content = '';
 					for (var i = 0; i < result.length; i++) {
 						var subObj = result[i];
-						console.log('数据返回来的值每一条', subObj);
 						content += '<li>';
-						content += '<h3><a href="achievements-details.html?' + subObj.id + '&' + encodeURI(title)+ '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></h3>';
+						content += '<h3><a href="achievements-details.html?' + subObj.id + '&' + encodeURI(subObj.title)+ '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></h3>';
 						content += '<h6>作者: ' + subObj.author + '</h6>';
 						content += '<p>' + subObj.content + '</p>';
 						content += '</li>';
@@ -263,7 +258,7 @@
 					for (var i = 0; i < result.length; i++) {
 						var subObj = result[i];
 						content += '<li>';
-						content += '<h3><a href="achievements-details.html?' + subObj.id + '&' + encodeURI(title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></h3>';
+						content += '<h3><a href="achievements-details.html?' + subObj.id + '&' + encodeURI(subObj.title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></h3>';
 						content += '<h6>作者: ' + (subObj.author ? subObj.author : '') + '</h6>';
 						content += '<p>' + (subObj.imgState ? subObj.imgState : '') + '</p>';
 						content += '</li>';

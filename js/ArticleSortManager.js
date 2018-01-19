@@ -82,7 +82,7 @@ function selectArticleSort(textTypeId, parentId,index,callBack,size) {
         size = 10;
     }
     http.get(BaseUrl+"/frontEnd/articleSort?textTypeId="+textTypeId+'&parentId='+parentId+'&index='+index+'&size='+size, function (err, result) {
-		console.log('查询文章',result);
+//		console.log('查询文章',result);
         if (result == null) {
             return;
         }

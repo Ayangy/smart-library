@@ -53,7 +53,7 @@ function getDatabase(keyword, beginTime, endTime, index, size, callBack) {
                 if (resultObj && resultObj.length == 0) {
                     resultObj = null;
                 }
-                callBack && callBack(resultObj);
+                callBack && callBack(resultObj,result);
             }
                 break;
             default: {

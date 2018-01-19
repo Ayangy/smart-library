@@ -68,7 +68,6 @@
 		<div class="navbar">
 			<div class="container" id="container">
 				<ul>
-					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
 					<li><a href="zkywList.html">智库动态</a></li>
 					<li><a href="hotspots.html">决策热点</a></li>
 					<li><a href="decision.html">决策调研</a></li>
@@ -87,83 +86,79 @@
 					<li class="expert">
 						<img src="" width="100" height="121" alt="">
 						<dl class="red">
-							<dt></dt>
+							<dt><span id="name"></span>&nbsp;<span id="gender"></span></dt>
 							<dd id="zhiwei">副主任</dd>
 						</dl>
 						<div class="expert-nav">
-							<a href="#anchor1">个人简历</a>
-							<a href="#anchor2">研究领域</a>
-							<a href="#anchor3">教育背景</a>
-							<a href="#anchor4">内部报告</a>
-							<a href="#anchor5">学术论文</a>
-							<a href="#anchor6">学术著作</a>
-							<a href="#anchor7">研究项目</a>
-							<a href="#anchor8">学术兼职</a>
-							<a href="#anchor9">社会荣誉</a>
-							<a href="#anchor10">研究成果</a>
-							<a href="#anchor11">联系方式</a>
+							<a href="#anchor0">籍贯</a>
+							<a href="#anchor1">出生日期</a>
+							<a href="#anchor2">职务</a>
+							<a href="#anchor3">专家称号</a>
+							<a href="#anchor4">所属单位</a>
+							<a href="#anchor5">学历</a>
+							<a href="#anchor6">学位</a>
+							<a href="#anchor7">简历</a>
+							<a href="#anchor8">研究领域</a>
+							<a href="#anchor9">决策咨询成果</a>
+							<a href="#anchor10">学术成果</a>
 						</div>
 					</li>
 				</ul>
 			</div>
 			<div class="listRight-expert-info" style="margin-bottom: 20px">
 				<dl>
-					<dt id="anchor0">所属机构</dt>
+					<dt id="anchor0">籍贯</dt>
 					<!--<dd>内蒙古发展研究中心（经济信息中心）</dd>-->
 					<dd></dd>
 				</dl>
 				<dl>
-					<dt id="anchor1">个人简历</dt>
+					<dt id="anchor1">出生日期</dt>
 					<!--<dd>1985年8月 参加工作以来，长期在自治区政府研究机构从事政策研究和经济理论研究，主持和参与了大量重大课题研究工作，参与自治区重大规划和政策的制定工作。</dd>-->
 					<dd></dd>
 				</dl>
 				<dl>
-					<dt id="anchor2">研究领域</dt>
+					<dt id="anchor2">职务</dt>
 					<!--<dd>宏观经济、产业经济、区域经济</dd>-->
 					<dd></dd>
 				</dl>
 				<dl>
-					<dt id="anchor3">教育背景</dt>
+					<dt id="anchor3">专家称号</dt>
 					<!--<dd>1985年7月 毕业于内蒙古财经学院。</dd>-->
 					<dd></dd>
 				</dl>
 				<dl>
-					<dt id="anchor4">内部报告</dt>
+					<dt id="anchor4">所属单位</dt>
 					<dd>
 					</dd>
 				</dl>
 				<dl>
-					<dt id="anchor5">学术论文</dt>
+					<dt id="anchor5">学历</dt>
 					<dd>
 					</dd>
 				</dl>
 				<dl>
-					<dt id="anchor6">学术著作</dt>
+					<dt id="anchor6">学位</dt>
 					<dd>
 					</dd>
 				</dl>
 				<dl>
-					<dt id="anchor7">研究项目</dt>
+					<dt id="anchor7">简历</dt>
 					<dd>
 					</dd>
 				</dl>
 				<dl>
-					<dt id="anchor8">学术兼职</dt>
+					<dt id="anchor8">研究领域</dt>
 					<dd>
 					</dd>
 				</dl>
 				<dl>
-					<dt id="anchor9">社会荣誉</dt>
+					<dt id="anchor9">决策咨询成果</dt>
+					<dd>
+					</dd>
+				</dl>
+				<dl>
+					<dt id="anchor10">学术成果</dt>
 					<dd></dd>
-				</dl>
-				<dl>
-					<dt id="anchor10">研究成果</dt>
-					<dd>
-					</dd>
-				</dl>
-				<dl>
-					<dt id="anchor11">联系方式</dt>
-					<dd>bsq7858@163.com</dd>
 				</dl>
 			</div>
 			<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
@@ -176,7 +171,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -213,54 +208,50 @@
 		</div>
 	</body>
 	<script src="js/jquery.min.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script src="js/findExpertByLetter.js"></script>
 	<script>
 		function loadHtmlContrent() {
-			var keyArr = ['organizationName', 'resume', 'research', 'educational', 'report', 'academicPaper', 'composition', 'researchProject', 'partTimeJob', 'socialPrestige', 'researchResult', 'contactWay'];
+			var keyArr = ['nativePlace', 'dateOfBirth', 'duty', 'expertsTitles', 'organizationName', 'educational', 'degree', 'resume', 'research', 'decisionConsultingResult', 'academicWorks'];
 			var expertId = window.location.search.toString();
 			expertId = expertId.substring(1, expertId.length);
 			queryAnExpert(expertId, function(result) {
 				console.log('专家详细数据', result);
 				if (!result[0].organizationName) {
-					$('#anchor0').css('display', 'none');
+					$('#anchor4').css('display', 'none');
 				}
 				if (!result[0].resume) {
 					$('#anchor1').css('display', 'none');
 				}
 				if (!result[0].research) {
-					$('#anchor2').css('display', 'none');
-				}
-				if (!result[0].educational) {
-					$('#anchor3').css('display', 'none');
-				}
-				if (!result[0].report) {
-					$('#anchor4').css('display', 'none');
-				}
-				if (!result[0].academicPaper) {
-					$('#anchor5').css('display', 'none');
-				}
-				if (!result[0].composition) {
-					$('#anchor6').css('display', 'none');
-				}
-				if (!result[0].researchProject) {
-					$('#anchor7').css('display', 'none');
-				}
-				if (!result[0].partTimeJob) {
 					$('#anchor8').css('display', 'none');
 				}
-				if (!result[0].socialPrestige) {
-					$('#anchor9').css('display', 'none');
+				if (!result[0].educational) {
+					$('#anchor5').css('display', 'none');
 				}
-				if (!result[0].researchResult) {
-					$('#anchor10').css('display', 'none');
+				if (!result[0].nativePlace) {
+					$('#anchor0').css('display', 'none');
 				}
-				if (!result[0].contactWay) {
-					$('#anchor11').css('display', 'none');
+				if (!result[0].dateOfBirth) {
+					$('#anchor1').css('display', 'none');
+				}
+				if (!result[0].duty) {
+					$('#anchor2').css('display', 'none');
+				}
+				if (!result[0].expertsTitles) {
+					$('#anchor3').css('display', 'none');
+				}
+				if (!result[0].degree) {
+					$('#anchor6').css('display', 'none');
 				}
 				if (!result[0].position) {
 					$('#zhiwei').css('display', 'none');
+				}
+				if (!result[0].decisionConsultingResult) {
+					$('#anchor9').css('display', 'none');
+				}
+				if (!result[0].academicWorks) {
+					$('#anchor10').css('display', 'none');
 				}
 				var childrenArr = $('.listRight-expert-info').children();
 				$.each(childrenArr, function(index, object) {
@@ -270,7 +261,8 @@
 						object.children[2].hidden = true;
 					}
 					$('.expert').find('img')[0].src = result[0].img;
-					$('.expert').find('.red').children()[0].textContent = result[0].name;
+					$('#name').text(result[0].name);
+					$('#gender').text(result[0].sex);
 					$('#zhiwei').text(result[0].position)
 				});
 			});

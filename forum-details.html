@@ -88,7 +88,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -125,7 +125,6 @@
 		</div>
 	</body>
 	<script src="js/jquery.min.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script src="js/ArticleSortManager.js"></script>
 	<script>
@@ -146,8 +145,15 @@
 			selectArticleDetails(contentId[0], function(result) {
 				if (result != null) {
 					getKind(result.textTypeId);
+					var time=(result.addTime).substring(0,10);
+					if(result.author==null){
+						result.author=""
+					}
+					if(result.source==null){
+						result.source=""
+					}
 					var content = '<h3 class="relative">' + result.title;
-					content += '<p>' + result.addTime + '</p>';
+					content += '<p style="text-align:left;">作者：<span class="red">'+result.author+'</span>&nbsp;来源：'+result.source+' <span class="right">'+time+'</span></p>';
 					content += '</h3>';
 					content += '<div class="article-content pt50 pb40">';
 					content += '<p>' + result.content + '</p>';

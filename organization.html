@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>湖北智库-智库机构</title>
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
 
 	<body>
@@ -228,7 +228,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -265,7 +265,6 @@
 		</div>
 	</body>
 	<script src="js/jquery.min.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
 	<script src="js/findOrganizationByLetter.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script>
@@ -339,8 +338,8 @@
 				findInstitutionByid(contentId, function(result) {
 					if (result != null) {
 						$('.listNavbar')[0].textContent = '——' + result.name + '——';
-						if (result.lead.length > 0) {
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>党组书记';
+						if (result.lead!=null) {
+							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>';
 						} else {
 							$('.org-right-box-content li')[0].innerHTML = '';
 						}
@@ -357,7 +356,7 @@
 						if (result.contactUs) {
 							var cont = result.contactUs;
 							cont = cont.replace('地址：', '<br/>地址：').replace('（站）电话：', '<br/>（站）电话：');
-							console.log(cont)
+//							console.log(cont)
 							$('#contactUs p').html(cont)
 						} else {
 							$('#contactUs p').empty()

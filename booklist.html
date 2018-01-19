@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,10 @@
 		<title>湖北智库-数据库</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="./css/pagination.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="./js/pagination.min.js"></script>
 	</head>
-
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -61,7 +62,7 @@
 					<li><a href="organizationHome.html">智库机构</a></li>
 					<li><a href="achievements.html">智库成果</a></li>
 					<li><a href="union.html">智库联盟</a></li>
-					<li><a href="database.html" class="current" >数据库</a></li>
+					<li><a href="database.html" class="current">数据库</a></li>
 				</ul>
 			</div>
 		</div>
@@ -70,47 +71,32 @@
 				<ul>
 					<li><a href="database.html">专题库</a></li>
 					<li><a href="videolist.html">音视频</a></li>
-					<li><a class="current">咨询库</a></li>
+					<li><a class="current">资讯库</a></li>
 					<li><a href="expert.html">专家库</a></li>
 					<li><a href="union.html">联盟库</a></li>
 					<li><a href="achievements.html">成果库</a></li>
 				</ul>
 			</div>
 			<div class="listRight">
-				<div class="listNavbar">您当前位置：数据库 > 咨询库</div>
+				<div class="listNavbar">您当前位置：数据库 > 资讯库</div>
 				<div class="ach-search database-search">
 					<div>
 						<label>查询分类：</label>
-						<select>
+						<select id="searchSel">
 							<option value="0">请选择文献类型</option>
-							<option value="1">专家文献</option>
-							<option value="2">演讲</option>
-							<option value="3">著作</option>
-							<option value="4">研究成果</option>
-							<option value="5">调研报告</option>
-							<option value="6">市场数据</option>
+							<option value="114">专家文献</option>
+							<option value="115">演讲</option>
+							<option value="116">著作</option>
+							<option value="117">研究成果</option>
+							<option value="118">调研报告</option>
+							<option value="119">市场数据</option>
 						</select>
 						<a href="##" class="submit border-radius5 relative" style="width:40px;height:30px;line-height:30px;top:1px;" id="searchButton">查询</a>
 					</div>
 				</div>
-				<ul>
-					<li><a href="booklist-details.html">湖北省社科院党组书记张忠家参加 “十月革命与中国特色社会主义”理论研讨会“十月革命与中国特色社会主义"</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">张忠家在《光明日报》发表学习习近平总书记系列重要讲话精神的理论文章</a><span>文献类型2</span></li>
-					<li><a href="booklist-details.html">张忠家到马研所支部指导省第十一次党代会精神专题学习</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">湖北省社科院院长宋亚平率队赴贵州社科院调研</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">中国区域经济50人论坛专题研讨会在汉召开秦尊文副院长剖析中部地区面临的挑战和机遇</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">湖北省社科院副院长杨述明深入陈家河村为党员上党课</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">李伟主任出席香港“国家‘十三五’规划与香港机遇高峰论坛”并作..</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">中国发展高层论坛2016年会在京举行</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">王一鸣副主任出席中国经济专题外媒座谈会</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">王一鸣副主任参加中英环境科学与政策对话论坛并会见英国驻华大使..</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">“中英发展论坛”及“中英改革和创新论坛”在伦敦举行</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">国研智库论坛2015年会在京召开</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">赵晋平同志出席“第三届丝绸之路经济带城市合作发展论坛”并作主..</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">常纪文副所长主持生态文明贵阳国际论坛分论坛并做专家发言</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">程国强同志出席中国农业大学主办的“2015年中国农业发展高层..</a><span>文献类型1</span></li>
-					<li><a href="booklist-details.html">李伟主任出席中瑞创新论坛并会见瑞典企业和创新大臣丹贝尔</a><span>文献类型1</span></li>
+				<ul id="listRight">
 				</ul>
+				<div id="pagination_7"></div>
 				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
 					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
 				</div>
@@ -122,7 +108,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -158,21 +144,83 @@
 			</ul>
 		</div>
 	</body>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
+	<script src="js/ArticleSortManager.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
-	<script type="text/javascript" src="js/jedate/WdatePicker.js">
-	</script>
+	<script src="js/jedate/WdatePicker.js"></script>
 	<script src="js/dataBaseObject.js"></script>
 	<script>
+		var parentId = 113;
+		var subid = 0;
+		var myselect = document.getElementById('searchSel');
 		$('#database').click(function() {
-				$(this).toggleClass("oneoff");
-				if ($(this).attr("class").indexOf('oneoff') > 0) {
-					$('.two').parent('li').css('display', 'none');
+			$(this).toggleClass("oneoff");
+			if ($(this).attr("class").indexOf('oneoff') > 0) {
+				$('.two').parent('li').css('display', 'none');
+			} else {
+				$('.two').parent('li').css('display', 'block');
+			}
+		})
+		$('#searchButton').click(function() {
+			var val=myselect.value;
+			ArticleSort(val, 113, 0);
+		})
+		//资讯库全部数据
+		ArticleSort(0, 113, 0);
+
+		function ArticleSort(subid, parentId, nowPage) {
+			selectArticleSort(subid, parentId, nowPage, function(result, res) {
+				var totalPages = res.page.totalPages;
+				if (result != null) {
+					var content = '';
+					for (var i = 0; i < result.length; i++) {
+						var subObj = result[i];
+						content += '<li><a href="booklist-details.html?' + subObj.id + '&' + decodeURI(judeText(subObj.literatureType)) + '&typeId=' + subid + '">' + subObj.title + '</a><span>[' + judeText(subObj.literatureType) + ']</span></li>';
+					}
+					document.getElementById("listRight").innerHTML = content;
+					$("#pagination_7").whjPaging({
+						totalPage: totalPages,
+						showPageNum: 10,
+						isShowFL: false,
+						isShowPageSizeOpt: false,
+						isShowSkip: false,
+						isShowRefresh: false,
+						isShowTotalPage: true,
+						isResetPage: true,
+						callBack: function(currPage, pageSize) {
+							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
+							ArticleSort(_subid, 11, currPage - 1, title);
+						}
+					});
 				} else {
-					$('.two').parent('li').css('display', 'block');
+					document.getElementById("listRight").innerHTML = "";
 				}
-			})
+			});
+		}
+		//判断文件类型
+		function judeText(num) {
+			switch (num) {
+				case 114:
+					return '专家文献';
+					break;
+				case 115:
+					return '演讲';
+					break;
+				case 116:
+					return '著作';
+					break;
+				case 117:
+					return '研究成果';
+					break;
+				case 118:
+					return '调研报告';
+					break;
+				case 119:
+					return '市场数据';
+					break;
+				default:
+					break;
+			}
+		}
 	</script>
 
 </html>

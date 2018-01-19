@@ -8,6 +8,9 @@
 		<title>湖北智库-音频视频</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="./css/pagination.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="./js/pagination.min.js"></script>
 	</head>
 
 	<body>
@@ -74,12 +77,16 @@
 			<ul>
 			</ul>
 		</div>
+		<div class="news-list-page"  id="pagination_7"></div>
+		<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
+			<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
+		</div>
 		<div class="footer">
 			<div class="container relative">
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号 &#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -115,38 +122,25 @@
 			</ul>
 		</div>
 	</body>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script>
-		function videoNewsClickEvent(subid) {
-			//        alert(subid)
+		function loadHtmlContent() {
+			videoNews(0, 10, '');
 		}
-		findVideoNews(0, 10, '', function(result) {
-			var content = '<ul>';
-			for (var j = 0; j < result.length; j++) {
-				var subObj = result[j];
-				content += '<li>';
-				content += '<a href="listvideo-details.html?' + subObj.id + '&音频视频" onclick="videoNewsClickEvent(' + subObj.id + ')">';
-				content += '<div class="img"><video src="' + subObj.videoUrl + '" alt=""></video><img src="img/video.png" alt="" class="btn-video"></div>';
-				content += '<h3>' + subObj.title + '</h3>';
-				content += '<p>' + subObj.content + '</p>';
-				content += '</li>';
-			}
-			content += '</ul>';
-			document.getElementById("news-list-page pb100").innerHTML = content;
-		});
-
-		function loadHtmlContent() {}
 		loadHtmlContent();
 		//音视频搜索
 		$('#searchButton').click(function() {
 			var txt = $('#keyPeopleName').val();
-			var html = '<div style="text-align: center;\n' +
-				'    color: #CCC;\n' +
-				'    margin-top: 75px;font-size: 14px;"> 暂无数据!</div>'
-			findVideoNews(0, 10, txt, function(result) {
-				if (result && result.length > 0) {
+			videoNews(0, 10, txt);
+		})
+
+		function videoNews(index, size, query){
+			findVideoNews(index, size, query, function(result, res){
+					var totalPages = res.page.totalPages;
+					var html = '<div style="text-align: center;\n' +
+						'    color: #CCC;\n' +
+						'    margin:60px 0px;font-size: 14px;">暂无数据!</div>'
+					if (result && result.length > 0) {	
 					var content = '<ul>';
 					for (var j = 0; j < result.length; j++) {
 						var subObj = result[j];
@@ -160,12 +154,27 @@
 					content += '</ul>';
 					document.getElementById("news-list-page pb100").innerHTML = content;
 					$('#keyPeopleName').val('');
+					$("#pagination_7").whjPaging({
+						totalPage: totalPages,
+						showPageNum: 10,
+						isShowFL: false,
+						isShowPageSizeOpt: false,
+						isShowSkip: false,
+						isShowRefresh: false,
+						isShowTotalPage: true,
+						isResetPage: true,
+						callBack: function(currPage, pageSize) {
+							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
+							videoNews(currPage - 1, 0, '');
+						}
+					});
 				} else {
 					document.getElementById("news-list-page pb100").innerHTML = html;
 					$('#keyPeopleName').val('');
 				}
+			
 			});
-		})
+		}
 	</script>
 
 </html>

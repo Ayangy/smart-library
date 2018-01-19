@@ -71,8 +71,6 @@
 					<li><a class="current">单位首页</a></li>
 					<li><a href="org-intro.html">单位介绍</a></li>
 					<li><a href="org-project.html">研究项目</a></li>
-					<!--<li><a href="org-ach.html">研究成果</a></li>-->
-					<!--<li><a href="expert.html">专家信息</a></li>-->
 					<li><a href="org-publish.html">出版物</a></li>
 				</ul>
 			</div>
@@ -135,11 +133,6 @@
                             <a href="org-ach.html">更多 &gt;&gt;</a>
                         </h3>
 							<dl class="org-home-img-sm">
-								<!--<dt>-->
-								<!--<img src="img/news-org2.jpg" alt="">-->
-								<!--</dt>-->
-								<!--<dd><a href="##">里约奥运会将推支付戒指 无需手机不用</a></dd>-->
-								<!--<p class="org-home-text">未来20年，中国制造要走向中国创造，需要互联网与制造业深度融合，成功的关键在于，中国能否形成软件</p>-->
 								<dt>
                                 <img>
                             </dt>
@@ -149,11 +142,6 @@
 								<p class="org-home-text"></p>
 							</dl>
 							<dl class="org-home-img-sm">
-								<!--<dt>-->
-								<!--<img src="img/news-org2.jpg" alt="">-->
-								<!--</dt>-->
-								<!--<dd><a href="##">里约奥运会将推支付戒指 无需手机不用</a></dd>-->
-								<!--<p class="org-home-text">未来20年，中国制造要走向中国创造，需要互联网与制造业深度融合，成功的关键在于，中国能否形成软件</p>-->
 								<dt>
                                 <img>
                             </dt>
@@ -169,12 +157,6 @@
                             <a href="org-publish.html">更多 &gt;&gt;</a>
                         </h3>
 							<dl class="org-home-img-sm">
-								<!--<dt class="org-home-img-sm-dt">-->
-								<!--<img src="img/news-org.jpg" alt="">-->
-								<!--<p>《研究与咨询》2016年</p>-->
-								<!--</dt>-->
-								<!--<dd><a href="##">· 《研究与咨询》2016年</a></dd>-->
-								<!--<p class="org-home-text">未来20年，中国制造要走向中国创造，需要互联网与制造业深度融合，成功的关键在于，中国能否形成软件</p>-->
 								<dt class="org-home-img-sm-dt">
                                 <img>
                                 <p></p>
@@ -188,8 +170,6 @@
 					</div>
 					<div class="org-home-right">
 						<div class="org-home-right-top relative mb10">
-							<!--<img src="img/org-right.jpg" alt="">-->
-							<!--<p>陕西省政府研究室副巡视员来中员来中员来中</p>-->
 							<img>
 							<p></p>
 						</div>
@@ -198,7 +178,6 @@
 							<h3><strong>单位领导</strong><a onclick="orgIntroMoreEvent()">更多 &gt;&gt;</a></h3>
 							<div class="org-right-box-content">
 								<ul>
-									<!--<li><strong>孙东海</strong>主任、党组书记</li>-->
 									<li><strong></strong></li>
 								</ul>
 							</div>
@@ -207,12 +186,6 @@
 						<div class="org-right-box mb10">
 							<h3><strong>单位简介</strong><a onclick="orgIntroMoreEvent()">更多 &gt;&gt;</a></h3>
 							<div class="org-right-box-content">
-								<!--<p class="p10_0"> 一、组织开展经济、社会发-->
-								<!--展与改革开放的政策咨询研究-->
-								<!--工作；研究国民经济、社会-->
-								<!--发展和改革开放中的全局性、-->
-								<!--综合性、战略性.. <a class="red">【详情】</a>-->
-								<!--</p>-->
 								<p class="p10_0">
 
 								</p>
@@ -222,13 +195,6 @@
 						<div class="org-right-box mb10">
 							<h3><strong>机构设置</strong><a onclick="orgIntroMoreEvent()">更多 &gt;&gt;</a></h3>
 							<div class="org-right-box-content">
-								<!--<p> 1.办公室<br>-->
-								<!--组织协调机关日常工作；负责-->
-								<!--会议组织、文电处理<br>-->
-								<!--2.机关党委<br>-->
-								<!--负责机关党的思想、组织、-->
-								<!--作风和精神文明建设及纪...-->
-								<!--</p>-->
 								<p></p>
 							</div>
 						</div>
@@ -255,7 +221,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -292,7 +258,6 @@
 		</div>
 	</body>
 	<script src="js/jquery.min.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
 	<script src="js/findOrganizationByLetter.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script>
@@ -367,7 +332,7 @@
 					if (result != null) {
 						$('.listNavbar')[0].textContent = '——' + result.name + '——';
 						if (result.lead.length > 0)
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>主任、党组书记';
+							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>';
 						if (result.intro.length > 0)
 							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + contentId + '" class="red">【详情】</a>';
 						if (result.institutionSetting.length > 0)

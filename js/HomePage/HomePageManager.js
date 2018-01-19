@@ -149,7 +149,7 @@ function getArticle(textTypeId, callBack) {
 }
 
 
-// 2.1.6、获取优选资讯
+// 2.1.6、获取智库视频
 function findVideoNews(index, size, query, callBack) {
 	var params = '';
 	if (index != null) {
@@ -179,7 +179,7 @@ function findVideoNews(index, size, query, callBack) {
 					var resultArr = result.result;
 					if (resultArr.length > 0) {
 						if (callBack != null) {
-							callBack(resultArr);
+							callBack(resultArr,result);
 						} else {
 							videoNews = resultArr[0];
 							videoNews1 = resultArr[1];
@@ -206,7 +206,7 @@ function findVideoNews(index, size, query, callBack) {
 							document.getElementById("findVideoNews").innerHTML = content;
 						}
 					} else {
-						callBack(resultArr);
+						 callBack(resultArr,result);
 					}
 				}
 				break;
@@ -284,7 +284,7 @@ function getRecommendArticle(recommend) {
 							content += '<ul>';
 							for (var i = 0; i < recommendContentArr.length; i++) {
 								var subObj = recommendContentArr[i];
-								console.log('每一条智库动态',subObj);
+//								console.log('每一条智库动态',subObj);
 								var title = subObj.title;
 								title = title.length < 24 ? title : title.substring(0, 23) + '...';
 								content += '<li class="item"' + (i == 0 ? ' style="left:0;">' : '>');
@@ -600,3 +600,14 @@ function makeComments(data, callBack) {
 		}
 	});
 }
+
+
+
+
+
+
+
+
+
+
+

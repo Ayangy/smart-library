@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>湖北智库-数据库</title>
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="./css/pagination.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="./js/pagination.min.js"></script>
 	</head>
+
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -50,7 +55,6 @@
 		<div class="navbar">
 			<div class="container" id="container">
 				<ul>
-					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
 					<li><a href="zkywList.html">智库动态</a></li>
 					<li><a href="hotspots.html">决策热点</a></li>
 					<li><a href="decision.html">决策调研</a></li>
@@ -66,15 +70,6 @@
 		<div class="listContent">
 			<div class="leftMenu" id="leftMenu">
 				<ul>
-					<!--<li><a id="database" class="current oneon">数据库</a></li>-->
-					<!--<li><a href="#" class="two">党建</a></li>
-					<li><a href="#" class="two">社会</a></li>
-					<li><a href="#" class="two">生态</a></li>
-					<li><a href="#" class="two">政治</a></li>
-					<li><a href="#" class="two">经济</a></li>
-					<li><a href="#" class="two">文化</a></li>
-					<li><a href="#" class="two">热点专题</a></li>
-					<li><a href="#" class="two">国际关系</a></li>-->
 					<li><a class="current">专题库</a></li>
 					<li><a href="videolist.html">音视频</a></li>
 					<li><a href="booklist.html">资讯库</a></li>
@@ -86,11 +81,8 @@
 			<div class="listRight">
 				<div class="listNavbar">您当前位置：数据库 > 专题库</div>
 				<div class="ach-search database-search">
-					<!--<label>关键人物：</label>
-					<input type="text" class="border-radius3 mr30 bgnone" placeholder="请输入关键人物" id="keyPeopleName">-->
 					<div>
 						<label>查询时间：</label>
-						<!--<input type="text" class="border-radius3 mr30" placeholder="请选择数据发布时间">-->
 						<input type="text" onClick="WdatePicker()" placeholder="起始日期" id="startData">
 						<input type="text" onClick="WdatePicker()" readonly="readonly" placeholder="结束日期" id="endData">
 						<input type="text" class="border-radius3 mr30 bgnone" placeholder="数据关键字" id="searchKeyWord" />
@@ -98,27 +90,13 @@
 					</div>
 				</div>
 				<ul>
-					<!--<li><a href="##">湖北省社科院党组书记张忠家参加 “十月革命与中国特色社会主义”理论研讨会“十月革命与中国特色社会主义"</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">张忠家在《光明日报》发表学习习近平总书记系列重要讲话精神的理论文章</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">张忠家到马研所支部指导省第十一次党代会精神专题学习</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">湖北省社科院院长宋亚平率队赴贵州社科院调研</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">中国区域经济50人论坛专题研讨会在汉召开秦尊文副院长剖析中部地区面临的挑战和机遇</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">湖北省社科院副院长杨述明深入陈家河村为党员上党课</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">李伟主任出席香港“国家‘十三五’规划与香港机遇高峰论坛”并作..</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">中国发展高层论坛2016年会在京举行</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">王一鸣副主任出席中国经济专题外媒座谈会</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">王一鸣副主任参加中英环境科学与政策对话论坛并会见英国驻华大使..</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">“中英发展论坛”及“中英改革和创新论坛”在伦敦举行</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">国研智库论坛2015年会在京召开</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">赵晋平同志出席“第三届丝绸之路经济带城市合作发展论坛”并作主..</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">常纪文副所长主持生态文明贵阳国际论坛分论坛并做专家发言</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">程国强同志出席中国农业大学主办的“2015年中国农业发展高层..</a><span>[2017-09-22]</span></li>-->
-					<!--<li><a href="##">李伟主任出席中瑞创新论坛并会见瑞典企业和创新大臣丹贝尔</a><span>[2017-09-22]</span></li>-->
 				</ul>
+				<div id="pagination_7"></div>
+				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
+				    <a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
+			    </div>
 			</div>
-			<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
-				<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
-			</div>
+			
 
 		</div>
 		<div class="footer">
@@ -126,7 +104,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>Copyright &#169; 2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -162,11 +140,8 @@
 			</ul>
 		</div>
 	</body>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
-	<script type="text/javascript" src="js/jedate/WdatePicker.js">
-	</script>
+	<script src="js/jedate/WdatePicker.js"></script>
 	<script src="js/dataBaseObject.js"></script>
 	<script>
 		$('#database').click(function() {
@@ -180,13 +155,6 @@
 		var parentId = 0;
 		var startDataVal, endDataVal, keyName, keyWord;
 		$(function() {
-			/*	$('#keyPeopleName').change(function() {
-					keyName = $(this).value;
-				})*/
-			/*	$('#searchKeyWord').change(function() {
-					keyWord = $(this).value;
-					console.log('keyWord---',keyWord)
-				})*/
 			$('#searchButton').click(function() {
 				startDataVal = $('#startData')[0].value;
 				endDataVal = $('#endData')[0].value;
@@ -195,88 +163,44 @@
 					return;
 				}
 				var keyWord = $('#searchKeyWord').val();
-				loadHtmlContent(keyWord, startDataVal, endDataVal);
+//				loadHtmlContent(keyWord, startDataVal, endDataVal);
+				Database(keyWord,startDataVal, endDataVal,0);
 			})
 		})
-		var getLeftMenumList = function() {
-			getArticleSonSort(parentId, function(result) {
-				if (result != null) {
-					sonsortArr = result;
-					parentId = -1;
-					for (var i = 0; i < sonsortArr.length; i++) {
-						var subObj = sonsortArr[i];
-						if (subObj.name == document.title) {
-							parentId = subObj.id;
-							break;
-						}
-					}
-					if (parentId == -1) return;
-					getArticleSonSort(parentId, function(result) {
-						if (result != null) {
-							subSonSortArr = result;
-							var content = '<ul>';
-							for (var i = 0; i < result.length; i++) {
-								var subObj = result[i];
-								content += '<li><a href="##' + subObj.id + '" onclick="leftMenuClickEvent(event, this,' + subObj.id + ')"' + (i == 0 ? ' class="current">' : '>') + subObj.name + '</a></li>';
-							}
-							content += '</ul>';
-							document.getElementById("leftMenu").innerHTML = content;
-							leftMenuClickEvent(null, null);
-						}
-					});
-				}
-			});
-		}
 
-		function loadHtmlContent(keyword, beginTime, endTime) {
-			var content = '';
-			$('.listRight ul')[0].innerHTML = content;
-			getDatabase(keyword, beginTime, endTime, 0, 10, function(result) {
+		function loadHtmlContent() {
+			Database("", "", "", "",0);
+		}
+		loadHtmlContent();
+
+		function Database(keyword, beginTime, endTime, index) {
+			getDatabase(keyword, beginTime, endTime, index, 10, function(result, res) {
+				console.log('专题库数据1', result);
+				console.log('专题库数据', res);
+				var totalPages = res.page.totalPages;
+				var content="";
 				if (result != null) {
 					for (var i = 0; i < result.length; i++) {
 						var subObj = result[i];
 						content += '<li><a href="database-details.html?' + subObj.id + '&typeId=' + subObj.id + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
 					}
 					$('.listRight ul')[0].innerHTML = content;
-				}
-			});
-		}
-		loadHtmlContent();
-
-		function leftMenuClickEvent(event, obj, subid) {
-			var title = '智库专家';
-			if (obj != null) {
-				for (var i = 0; i < obj.parentElement.parentElement.childElementCount; i++) {
-					var aobj = obj.parentElement.parentElement.children[i].children[0];
-					aobj.className = null;
-					if (obj == aobj) {
-						continue;
-					}
-				}
-				obj.className = "current";
-				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：智库论坛  > " + obj.textContent;
-				title = obj.textContent;
-			}
-			subId = subid;
-			if (!subid) {
-				subid = subSonSortArr[0].id;
-			}
-			document.getElementById("line-spe-china").innerHTML = '';
-			//        $('.listRight div[class = "pages"]')[0].hidden = true;
-			var contentId = window.location.hash.toString();
-			contentId = contentId.substring(2, contentId.length);
-			selectArticleSort(subid, parentId, nowPage, function(result) {
-				if (result != null) {
-					articleSortArr = result;
-					var content = '';
-					for (var i = 0; i < result.length; i++) {
-						var subObj = result[i];
-						content += '<li><a href="forum-details.html?' + subObj.id + '&' + encodeURI(title) + '&typeId=' + subid + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
-					}
-					document.getElementById("line-spe-china").innerHTML = content;
-					if (result.length > 10) {
-						//                    $('.listRight div[class = "pages"]')[0].hidden = true
-					}
+					$("#pagination_7").whjPaging({
+						totalPage: totalPages,
+						showPageNum: 10,
+						isShowFL: false,
+						isShowPageSizeOpt: false,
+						isShowSkip: false,
+						isShowRefresh: false,
+						isShowTotalPage: true,
+						isResetPage: true,
+						callBack: function(currPage, pageSize) {
+							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
+							Database(keyword, beginTime, endTime,currPage-1);
+						}
+					});
+				}else{
+					$('.listRight ul')[0].innerHTML ="";
 				}
 			});
 		}
