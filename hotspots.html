@@ -76,7 +76,7 @@
 				<ul id="listRight">
 				</ul>
 				<div id="pagination_7"></div>
-				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
+				<div id="backTopOut" class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
 					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
 				</div>
 			</div>
@@ -86,8 +86,8 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
-					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+				    <p>鄂ICP备13008287号&nbsp;&#169;2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>&nbsp;&nbsp;地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
 			</div>
@@ -157,12 +157,16 @@
 					}
 				}
 				obj.className = "current";
+				if($('#pagination_7').length && $('#pagination_7').length>0){
+					$('#pagination_7').remove();
+					$('#backTopOut').before('<div id="pagination_7"></div>');
+				}
 				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：决策热点 > " + obj.textContent;
 				title = obj.textContent;
 				ArticleSort(subid, 11, 0, title);
 			}
 		}
-
+        //每一页数据
 		function ArticleSort(subid, parentId, nowPage, title) {
 			selectArticleSort(subid, parentId, nowPage, function(result,res) {
 				var totalPages = res.page.totalPages;
@@ -194,23 +198,6 @@
 				}
 			});
 		}
-		/*	$(function(){
-				$("#pagination_7").whjPaging({
-						totalPage: totalPages,
-						showPageNum: 10,
-						isShowFL: false,
-						isShowPageSizeOpt: false,
-						isShowSkip: false,
-						isShowRefresh: false,
-						isShowTotalPage: true,
-						isResetPage: false,
-						callBack: function(currPage, pageSize) {
-							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
-							console.log(_subid);
-							ArticleSort(_subid, 11, currPage-1, _title);
-						}
-					});
-			})*/
 	</script>
 
 </html>

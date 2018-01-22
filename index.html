@@ -9,7 +9,6 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="css/SuperSlide2.css" />
 	</head>
-
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -419,7 +418,6 @@
 				<!-- end -->
 			</div>
 		</div>
-
 		<div class="footerContent">
 			<div class="linkHeader">
 				<div class="item active">友情链接</div>
@@ -451,8 +449,8 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
-					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500</p>
+					<p>鄂ICP备13008287号&nbsp;&#169;2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>&nbsp;&nbsp;地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm">
 					<img src="img/ewm.gif">微信公众号</div>
@@ -505,12 +503,12 @@
 		var sonsortArr27 = [];
 		var sonsortArr28 = [];
 		//findTitleImageByState();
-		getArticleSonSort(0, function(result) {
+         getArticleSonSort(0, function(result) {
 			if (result != null) {
 				sonsortArr = result;
 			}
 			selectArticleSort(0, 11, 0, function(result) {
-				var content = '';
+						var content ='';
 				if (result == null) {
 					return;
 				}
@@ -523,7 +521,7 @@
 			selectArticleSort(0, 28, 0, function(result) {
 				var content = '';
 				if (result == null) {
-					//					document.getElementById("zkcg-list").innerHTML = content;
+					//document.getElementById("zkcg-list").innerHTML = content;
 					return;
 				}
 				sonsortArr28 = result;
@@ -879,16 +877,19 @@
 		}
 		//首页banner图  
 		findByState(1, function(result) {
+			console.log('首页banner图1',result[0]);
 			$('.banner1 img').attr('src', result[0].imgUrl);
 			$('.banner2 img').attr('src', result[1].imgUrl);
 			$('.banner3 img').attr('src', result[2].imgUrl);
 		});
 		findByState(2, function(result) {
+			console.log('首页banner图2',result);
 			$('.banner4 img').attr('src', result[0].imgUrl);
 			$('.banner5 img').attr('src', result[1].imgUrl);
 			$('.banner6 img').attr('src', result[2].imgUrl);
 		});
 		findByState(3, function(result) {
+			console.log('首页banner图3',result);
 			$('.banner7 img').attr('src', result[0].imgUrl);
 			$('.banner8 img').attr('src', result[1].imgUrl);
 			$('.banner9 img').attr('src', result[2].imgUrl);

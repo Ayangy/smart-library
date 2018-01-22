@@ -12,6 +12,7 @@
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="./js/pagination.min.js"></script>
 	</head>
+
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -119,7 +120,7 @@
 						<li class="center" style="width:100%;"><a href="##" class="submit border-radius5" style="width:90px;" id="selectButton">查询</a></li>
 					</ul>
 				</div>
-				<div class="ach-list" >
+				<div class="ach-list">
 					<ul id="listRight">
 					</ul>
 					<div id="pagination_7"></div>
@@ -132,8 +133,8 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>鄂ICP备13008287号&#169;2017 湖北省社会科学院 All Rights Reserved</p>
-					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792493 </p>
+					<p>鄂ICP备13008287号&nbsp;&#169;2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>&nbsp;&nbsp;地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
 			</div>
@@ -174,6 +175,7 @@
 	<script>
 		var _subid = 38;
 		var sort = 0;
+
 		function loadHtmlContent() {
 			getArticleSonSort(28, function(result) {
 				if (result != null) {
@@ -204,6 +206,10 @@
 					}
 				}
 				obj.className = "current";
+				if ($('#pagination_7').length && $('#pagination_7').length > 0) {
+					$('#pagination_7').remove();
+					$('#listRight').after('<div id="pagination_7"></div>');
+				}
 				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：数据中心 > 成果库 > " + obj.textContent;
 				title = obj.textContent;
 				ArticleSort(subid, 28, 0, title);
@@ -236,7 +242,7 @@
 					for (var i = 0; i < result.length; i++) {
 						var subObj = result[i];
 						content += '<li>';
-						content += '<h3><a href="achievements-details.html?' + subObj.id + '&' + encodeURI(subObj.title)+ '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></h3>';
+						content += '<h3><a href="achievements-details.html?' + subObj.id + '&' + encodeURI(subObj.title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></h3>';
 						content += '<h6>作者: ' + subObj.author + '</h6>';
 						content += '<p>' + subObj.content + '</p>';
 						content += '</li>';

@@ -2161,6 +2161,13 @@ input {
 	margin-bottom: 20px;
 	text-align: justify;
 }
+.listContent-details .article-content img {
+	width: 100%;
+}
+
+
+
+
 
 .listContent-details .article-content .ql-align-center {
 	color: #656565;

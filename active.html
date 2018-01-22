@@ -79,8 +79,8 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-					<p>鄂ICP备13008287号&#169; 2017 湖北省社会科学院 All Rights Reserved</p>
-					<p>地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
+					<p>鄂ICP备13008287号&nbsp;&#169;2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>&nbsp;&nbsp;地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
 			</div>
@@ -118,23 +118,22 @@
 	<script src="http://www.17sucai.com/preview/77697/2015-09-06/jiaoben1484/js/jQuery.1.8.2.min.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script type="text/javascript">
-			var id=	GetQueryString('id');
-			var actcode=GetQueryString('ActivationCode');
-			$.ajax({
-				type: "get",
-				url: BaseUrl + "/clientUser/activateUser?id="+id+"&ActivationCode="+actcode,
-				async: true,
-				dataType: "JSON",
-				success: function(data) {
-					console.log(data);
-					$('.newbox-content').html(data.message);
-				},
-				error: function() {
-					console.log('异常');
-				}
-			});
-//		http://192.168.100.62/active.html?
-
+		var id = GetQueryString('id');
+		var actcode = GetQueryString('ActivationCode');
+		$.ajax({
+			type: "get",
+			url: BaseUrl + "/clientUser/activateUser?id=" + id + "&ActivationCode=" + actcode,
+			async: true,
+			dataType: "JSON",
+			success: function(data) {
+				console.log(data);
+				$('.newbox-content').html(data.message);
+			},
+			error: function() {
+				console.log('异常');
+			}
+		});
+		//		http://192.168.100.62/active.html?
 	</script>
 
 </html>
