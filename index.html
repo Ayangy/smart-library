@@ -168,7 +168,7 @@
 					<div class="list-left1">
 						<div class="news-title list-left-title">
 							<strong>湖北智库</strong>
-							<a href="organizationHome.html">更多 &gt&gt</a>
+							<a href="qdzc.html">更多 &gt&gt</a>
 						</div>
 						<div class="list-left-content clearfix" id="sevenzk">
 							<ul class="news-content" id="sevenzk-one">
@@ -469,7 +469,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -496,6 +496,7 @@
 		<script src="js/findResultByCriteria.js"></script>
 		<script src="js/dataBaseObject.js"></script>
 		<script src="js/common/jquery.SuperSlide2.js"></script>
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 	</body>
 	<script>
 		$('.top_back_home').remove();
@@ -872,24 +873,21 @@
 				location.href = 'decision-detail.html?' + id
 			}
 			if (parentId == 58) {
-				location.href = 'qdzc-details.html?' + id + '&' + type;
+				location.href = 'qdzc-details.html?' + id + '&home&typeId=' + type;
 			}
 		}
 		//首页banner图  
 		findByState(1, function(result) {
-			console.log('首页banner图1',result[0]);
 			$('.banner1 img').attr('src', result[0].imgUrl);
 			$('.banner2 img').attr('src', result[1].imgUrl);
 			$('.banner3 img').attr('src', result[2].imgUrl);
 		});
 		findByState(2, function(result) {
-			console.log('首页banner图2',result);
 			$('.banner4 img').attr('src', result[0].imgUrl);
 			$('.banner5 img').attr('src', result[1].imgUrl);
 			$('.banner6 img').attr('src', result[2].imgUrl);
 		});
 		findByState(3, function(result) {
-			console.log('首页banner图3',result);
 			$('.banner7 img').attr('src', result[0].imgUrl);
 			$('.banner8 img').attr('src', result[1].imgUrl);
 			$('.banner9 img').attr('src', result[2].imgUrl);

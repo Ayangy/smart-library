@@ -107,7 +107,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -123,12 +123,16 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script src="js/ArticleSortManager.js"></script>
 	<script>
 		var _subid = 12;
-		
+
 		function loadHtmlContent() {
 			getArticleSonSort(24, function(result) {
 				if (result != null) {
@@ -159,7 +163,7 @@
 					}
 				}
 				obj.className = "current";
-				if($('#pagination_7').length && $('#pagination_7').length>0){
+				if ($('#pagination_7').length && $('#pagination_7').length > 0) {
 					$('#pagination_7').remove();
 					$('#backTopOut').before('<div id="pagination_7"></div>');
 				}
@@ -179,20 +183,20 @@
 						content += '<li><a href="forum-details.html?' + subObj.id + '&' + encodeURI(title) + '&typeId=' + subid + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
 					}
 					document.getElementById("listRight").innerHTML = content;
-						$("#pagination_7").whjPaging({
-							totalPage: totalPages,
-							showPageNum: 10,
-							isShowFL: false,
-							isShowPageSizeOpt: false,
-							isShowSkip: false,
-							isShowRefresh: false,
-							isShowTotalPage: true,
-							isResetPage: true,
-							callBack: function(currPage, pageSize) {
-								console.log('currPage:' + currPage + '     pageSize:' + pageSize);
-								ArticleSort(_subid, 24, currPage - 1, title);
-							}
-						});
+					$("#pagination_7").whjPaging({
+						totalPage: totalPages,
+						showPageNum: 10,
+						isShowFL: false,
+						isShowPageSizeOpt: false,
+						isShowSkip: false,
+						isShowRefresh: false,
+						isShowTotalPage: true,
+						isResetPage: true,
+						callBack: function(currPage, pageSize) {
+							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
+							ArticleSort(_subid, 24, currPage - 1, title);
+						}
+					});
 				} else {
 					document.getElementById("listRight").innerHTML = "";
 				}

@@ -69,11 +69,9 @@
 			<div class="leftMenu" id="leftMenu">
 				<ul>
 					<li><a class="current">单位首页</a></li>
-					<li><a href="org-intro.html">单位介绍</a></li>
-					<li><a href="org-project.html">研究项目</a></li>
-					<!--<li><a href="org-ach.html">研究成果</a></li>-->
-					<!--<li><a href="expert.html">专家信息</a></li>-->
-					<li><a href="org-publish.html">出版物</a></li>
+					<li id="intro"><a href="org-intro.html">单位介绍</a></li>
+					<li id="project"><a href="org-project.html">研究项目</a></li>
+					<li id="publish"><a href="org-publish.html">出版物</a></li>
 				</ul>
 			</div>
 			<div class="listRight-orgIntro">
@@ -81,98 +79,18 @@
 				<div class="listNavbar center"></div>
 				<div class="org-home-container mt20">
 					<div class="org-home-left">
-						<div class="org-home-topNews mb15">
-							<dl>
-								<dt></dt>
-								<dd>
-									<a href="##" class="red"></a>
-								</dd>
-							</dl>
-							<ul>
-								<li>
-									<a href="##"></a>
-								</li>
-								<li>
-									<a href="##"></a>
-								</li>
-								<li>
-									<a href="##"></a>
-								</li>
-								<li>
-									<a href="##"></a><span class="red"></span></li>
-							</ul>
+						<div class="org-home-news" id="org-project">
+
 						</div>
-						<div class="org-home-news">
-							<h3 class="news-title-lg">
-                            <img src="img/page.png" class="left"><strong>研究项目</strong>
-                            <a href="org-project.html">更多 &gt;&gt;</a>
-                        </h3>
-							<dl>
-								<dt>
-                                <img>
-                                <p></p>
-                            </dt>
-								<dd>
-									<a href="##"></a>
-								</dd>
-								<dd>
-									<a href="##"></a>
-								</dd>
-								<dd>
-									<a href="##"></a>
-								</dd>
-								<dd>
-									<a href="##"></a>
-								</dd>
-								<dd>
-									<a href="##"></a>
-								</dd>
-							</dl>
+						<div class="org-home-news" id="org-ach">
+
 						</div>
-						<div class="org-home-news">
-							<h3 class="news-title-lg">
-                            <img src="img/trophy.png" class="left"><strong>研究成果</strong>
-                            <a href="org-ach.html">更多 &gt;&gt;</a>
-                        </h3>
-							<dl class="org-home-img-sm">
-								<dt>
-                                <img>
-                            </dt>
-								<dd>
-									<a href="##"></a>
-								</dd>
-								<p class="org-home-text"></p>
-							</dl>
-							<dl class="org-home-img-sm">
-								<dt>
-                                <img>
-                            </dt>
-								<dd>
-									<a href="##"></a>
-								</dd>
-								<p class="org-home-text"></p>
-							</dl>
-						</div>
-						<div class="org-home-news">
-							<h3 class="news-title-lg">
-                            <img src="img/book.png" class="left"><strong>出版物</strong>
-                            <a href="org-publish.html">更多 &gt;&gt;</a>
-                        </h3>
-							<dl class="org-home-img-sm">
-								<dt class="org-home-img-sm-dt">
-                                <img>
-                                <p></p>
-                            </dt>
-								<dd>
-									<a href="##"></a>
-								</dd>
-								<p class="org-home-text"></p>
-							</dl>
+						<div class="org-home-news" id="org-publish">
+
 						</div>
 						<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
 							<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
 						</div>
-
 					</div>
 					<div class="org-home-right">
 						<div class="org-home-right-top relative mb10">
@@ -184,7 +102,6 @@
 							<h3><strong>单位领导</strong></h3>
 							<div class="org-right-box-content">
 								<ul>
-									<!--<li><strong>孙东海</strong>主任、党组书记</li>-->
 									<li><strong></strong></li>
 								</ul>
 							</div>
@@ -193,12 +110,7 @@
 						<div class="org-right-box mb10">
 							<h3><strong>单位简介</strong></h3>
 							<div class="org-right-box-content">
-								<!--<p class="p10_0"> 一、组织开展经济、社会发-->
-								<!--展与改革开放的政策咨询研究-->
-								<!--工作；研究国民经济、社会-->
-								<!--发展和改革开放中的全局性、-->
-								<!--综合性、战略性.. <a class="red">【详情】</a>-->
-								<!--</p>-->
+
 								<p class="p10_0">
 
 								</p>
@@ -247,7 +159,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -263,136 +175,88 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/findOrganizationByLetter.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script>
-		var orgId;
-		function orgIntroMoreEvent() {
-			window.location.href = 'org-intro.html?' + orgId;
-		}
-
-		function getContentList(contentId) {
-			$('.leftMenu').find('[href = "org-intro.html"]')[0].href = "org-intro.html?" + contentId;
-			getOrganizationNotice(contentId, 21, function(result) {
-				if (result != null) {
-					$('.org-home-topNews dt')[0].textContent = result.title;
-					$('.org-home-topNews dd')[0].innerHTML = result.content.substring(0, 200) + '<a href="organization-details.html?' + result.id + '" class="red">【详情】</a>';
-				}
-			})
-			getOrganizationActivity(contentId, 22, 0, 4, function(result) {
-				if (result != null) {
-					for (var i = 0; i < 4; i++) {
-						$('.org-home-topNews li')[i].hidden = false;
-						if (i >= result.length) {
-							$('.org-home-topNews li')[i].hidden = true;
-						} else {
-							if (i == 3) {
-								$('.org-home-topNews li')[i].innerHTML = '<a href="organization-details.html?' + result[i].id + '">【' + result[i].title + '】</a><span class="red">【更多动态】</span>';
-							} else {
-								$('.org-home-topNews li')[i].innerHTML = '<a href="organization-details.html?' + result[i].id + '">【' + result[i].title + '】</a>';
-							}
-						}
-					}
-				}
-			})
-			getInstitutionArticle(contentId, 46, 0, 1, function(result) {
-				if (result != null) {
-					var subObj = result[0];
-					$('.org-home-news dt')[0].find('img')[2].src = subObj.imgUrl;
-					$('.org-home-news dt').find('p')[1].textContent = subObj.title;
-					$('.org-home-news').find('dd')[7].textContent = subObj.title;
-					$('.org-home-news dl').find('[class = org-home-text]')[2].textContent = subObj.content;
-				}
-			})
-			getInstitutionArticle(contentId, 45, 0, 2, function(result) {
-				if (result != null) {
-					for (var i = 0; i < result.length; i++) {
-						var subObj = result[i];
-						$('.org-home-news dt')[0].find('img')[i + 1].src = subObj.imgUrl;
-						$('.org-home-news').find('dd')[i + 5].textContent = subObj.title;
-						$('.org-home-news dl').find('[class = org-home-text]')[0].textContent = subObj.content;
-					}
-				}
-			})
-			getInstitutionArticle(contentId, 44, 0, 5, function(result) {
-				if (result != null) {
-					var subObj = result[0];
-					$('.org-home-news dt')[0].find('img')[0].src = subObj.imgUrl;
-					$('.org-home-news dt').find('p')[0].textContent = subObj.title;
-					for (var i = 0; i < result.length; i++) {
-						$('.org-home-news').find('dd')[i].textContent = subObj.title;
-					}
-				}
-			})
-		}
-
 		function loadHtmlContent() {
 			var contentId = window.location.search.toString();
 			if (contentId.length > 0) {
 				contentId = contentId.substring(1, contentId.length);
 				contentId = contentId.split('&');
 				contentId = contentId[0];
-				orgId = contentId;
+				$('#intro a').attr('href', 'org-intro.html?' + contentId);
+				$('#project a').attr('href', 'org-project.html?' + contentId);
+				$('#publish a').attr('href', 'org-publish.html?' + contentId);
+				//右边栏数据
 				findInstitutionByid(contentId, function(result) {
-					if (result != null) {
-						$('.listNavbar')[0].textContent = '——' + result.name + '——';
-						if (result.lead!=null) {
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>';
-						} else {
-							$('.org-right-box-content li')[0].innerHTML = '';
+						if (result != null) {
+							$('.listNavbar')[0].textContent = '——' + result.name + '——';
+							if (result.lead != null && result.lead.length > 0) {
+								$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>';
+							} else {
+								$('.org-right-box-content li')[0].innerHTML = '';
+							}
+							if (result.intro != null && result.intro.length > 0) {
+								$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + contentId + '" class="red">【详情】</a>';
+							} else {
+								$('.org-right-box-content p')[0].innerHTML = '';
+							}
+							if (result.institutionSetting != null && result.institutionSetting.length > 0) {
+								$('.org-right-box-content p')[1].innerHTML = result.institutionSetting.substring(0, 100) + '<a href="org-intro.html?' + result.id + '" class="red">【详情】</a>';
+							} else {
+								$('.org-right-box-content p')[1].innerHTML = '';
+							}
+							if (result.contactUs != null && result.contactUs.length > 0) {
+								var cont = result.contactUs;
+								cont = cont.replace('地址：', '<br/>地址：').replace('（站）电话：', '<br/>（站）电话：');
+								$('#contactUs p').html(cont)
+							} else {
+								$('#contactUs p').empty()
+							}
 						}
-						if (result.intro.length > 0) {
-							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + contentId + '" class="red">【详情】</a>';
+					})
+					//研究项目
+				getInstitutionArticle(0, 120, contentId, 0, 6, function(res) {
+						if (res != null) {
+							var str = '<h3 class="news-title-lg">' +
+								'<img src="img/page.png" class="left"><strong>研究项目</strong><a href="org-project.html?' + contentId + '">更多 &gt;&gt;</a> </h3>' +
+								'<dl><dt><a href="org-project-details.html?' + res[0].id + '&home"><img src="' + res[0].imgUrl + '"><p>' + res[0].title + '</p></a></dt>';
+							for (var i = 1; i < res.length; i++) {
+								str += '<dd><a href="org-project-details.html?' + res[i].id + '&home">' + res[i].title + '</a></dd>';
+							}
+							str += '</dl>';
+							$('#org-project').html(str);
 						} else {
-							$('.org-right-box-content p')[0].innerHTML = '';
+							$('#org-project').html('');
 						}
-						if (result.institutionSetting.length > 0) {
-							$('.org-right-box-content p')[1].innerHTML = result.institutionSetting.substring(0, 100) + '<a href="org-intro.html?' + result.id + '" class="red">【详情】</a>';
+					})
+					//研究成果
+				getInstitutionArticle(0, 125, contentId, 0, 2, function(res) {
+						if (res != null) {
+							var str = '<h3 class="news-title-lg"><img src="img/trophy.png" class="left"><strong>研究成果</strong> <a href="org-ach.html?' + contentId + '">更多 &gt;&gt;</a></h3>';
+							for (var i = 0; i < res.length; i++) {
+								str += '<dl class="org-home-img-sm"><dt><img src="' + res[i].imgUrl + '"></dt><dd><a href="org-ach-details.html?' + res[i].id + '&home">' + res[i].title + '</a></dd><p class="org-home-text">' + res[i].imgState + '</p></dl>';
+							}
+							$('#org-ach').html(str);
 						} else {
-							$('.org-right-box-content p')[1].innerHTML = '';
+							$('#org-ach').html('');
 						}
-						if (result.contactUs) {
-							var cont = result.contactUs;
-							cont = cont.replace('地址：', '<br/>地址：').replace('（站）电话：', '<br/>（站）电话：');
-//							console.log(cont)
-							$('#contactUs p').html(cont)
-						} else {
-							$('#contactUs p').empty()
-						}
-					}
-				})
-				getContentList(contentId);
-			} else {
-				getThisInstitution(function(result) {
-					if (result != null) {
-						orgId = result.id;
-						getContentList(result.id);
-						$('.listNavbar')[0].textContent = '——' + result.name + '——';
-						if (result.lead.length > 0) {
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>党组书记';
-						} else {
-							$('.org-right-box-content li')[0].innerHTML = '';
-						}
-						if (result.intro.length > 0) {
-							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + result.id + '" class="red">【详情】</a>';
-						} else {
-							$('.org-right-box-content p')[0].innerHTML = '';
-						}
-						if (result.institutionSetting.length > 0) {
-							$('.org-right-box-content p')[1].innerHTML = result.institutionSetting.substring(0, 100) + '<a href="org-intro.html?' + result.id + '" class="red">【详情】</a>';
-						} else {
-							$('.org-right-box-content p')[1].innerHTML = '';
-						}
-						if (result.contactUs) {
-							var cont = result.contactUs;
-							cont = cont.replace('地址：', '<br/>地址：').replace('（站）电话：', '<br/>（站）电话：');
-							console.log(cont)
-							$('#contactUs p').html(cont)
-						} else {
-							$('#contactUs p').empty()
-						}
+					})
+					//出版物
+				getInstitutionArticle(0, 131, contentId, 0, 2, function(res) {
+					if (res != null) {
+						var str = '<h3 class="news-title-lg"><img src="img/book.png" class="left"><strong>出版物</strong><a href="org-publish.html?' + contentId + '">更多 &gt;&gt;</a></h3>' +
+							'<dl class="org-home-img-sm"><dt class="org-home-img-sm-dt"><a href="org-publish-details.html?' + res[0].id + '&home" ><img src="' + res[0].imgUrl + '"><p>' + res[0].title + '</p></a></dt>' +
+							'<dd><a href="org-publish-details.html?' + res[1].id + '&home">' + res[1].title + '</a></dd><p class="org-home-text">' + res[1].imgState + '</p></dl>';
+						$('#org-publish').html(str);
+					} else {
+						$('#org-publish').html('');
 					}
 				})
 			}

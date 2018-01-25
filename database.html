@@ -93,10 +93,9 @@
 				</ul>
 				<div id="pagination_7"></div>
 				<div class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
-				    <a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
-			    </div>
+					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
+				</div>
 			</div>
-			
 
 		</div>
 		<div class="footer">
@@ -123,7 +122,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -139,6 +138,10 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script src="js/jedate/WdatePicker.js"></script>
@@ -163,13 +166,13 @@
 					return;
 				}
 				var keyWord = $('#searchKeyWord').val();
-//				loadHtmlContent(keyWord, startDataVal, endDataVal);
-				Database(keyWord,startDataVal, endDataVal,0);
+				//				loadHtmlContent(keyWord, startDataVal, endDataVal);
+				Database(keyWord, startDataVal, endDataVal, 0);
 			})
 		})
 
 		function loadHtmlContent() {
-			Database("", "", "", "",0);
+			Database("", "", "", "", 0);
 		}
 		loadHtmlContent();
 
@@ -178,7 +181,7 @@
 				console.log('专题库数据1', result);
 				console.log('专题库数据', res);
 				var totalPages = res.page.totalPages;
-				var content="";
+				var content = "";
 				if (result != null) {
 					for (var i = 0; i < result.length; i++) {
 						var subObj = result[i];
@@ -196,11 +199,11 @@
 						isResetPage: true,
 						callBack: function(currPage, pageSize) {
 							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
-							Database(keyword, beginTime, endTime,currPage-1);
+							Database(keyword, beginTime, endTime, currPage - 1);
 						}
 					});
-				}else{
-					$('.listRight ul')[0].innerHTML ="";
+				} else {
+					$('.listRight ul')[0].innerHTML = "";
 				}
 			});
 		}

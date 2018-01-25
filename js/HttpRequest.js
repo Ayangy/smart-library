@@ -7,15 +7,20 @@
 //var BaseUrl = 'http://192.168.100.190:8080';
 var BaseUrl = 'http://47.104.8.66:8080';
 /*var BaseUrl = 'http://localhost:8080';*/
-//var BaseUrl = 'http://192.168.100.58:8080'
+//var BaseUrl = 'http://192.168.100.44:8080'
 
 //登录
 var code;
 var storage = window.localStorage;
 newcode();
-$('#newimg,#newloginImg').on('click', function() {
+$('#newloginImg').on('click', function() {
 	newcode();
 });
+$('#newimg').on('click', function() {
+	newcode();
+});
+
+
 $('#loginbtn').on('click', function() {
 	var username = $('#username').val();
 	var pds = $('#password').val();
@@ -198,8 +203,6 @@ $('.item').click(function() {
 Link(1);
 function newcode() {
 	$.post(BaseUrl + "/frontEnd/getCaptcha", function(res) {
-		console.log('验证图片',res);
-		console.log('图片',res.result.img);
 		code = res.result.captcha;
 		$('#codeimg').attr('src', res.result.img);
 		$('#loginImg').attr('src', res.result.img);
@@ -209,8 +212,6 @@ function newcode() {
 //1.1.1获取首页banner图
 function findByState(advertisingPlace, callBack) {
 	http.get(BaseUrl + "/titleImg/findByState?advertisingPlace=" + advertisingPlace, function(err, result) {
-		console.log('获取首页banner图',result);
-		console.log('获取首页banner图错误',err);
 		if (result == null) {
 			return;
 		}

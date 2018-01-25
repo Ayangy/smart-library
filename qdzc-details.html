@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
+
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -50,7 +52,6 @@
 		<div class="navbar">
 			<div class="container" id="container">
 				<ul>
-					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
 					<li><a href="zkywList.html">智库动态</a></li>
 					<li><a href="hotspots.html">决策热点</a></li>
 					<li><a href="decision.html">决策调研</a></li>
@@ -63,7 +64,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="current-nav" id="current-nav">您当前位置：七大智库 > 党政智库 > 详情 </div>
+		<div class="current-nav" id="current-nav">您当前位置：湖北智库 > 党政智库 > 详情 </div>
 		<div class="listContent-details">
 			<div class="article1" id="article">
 			</div>
@@ -92,7 +93,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -108,6 +109,10 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
@@ -120,7 +125,12 @@
 					contentId = contentId.substring(1, contentId.length);
 					contentId = contentId.split('&');
 					console.log('contentid', contentId);
-					document.getElementById("current-nav").textContent = "您当前位置：首页 > 七大智库 > " + transTitle(contentId[1]) + " > 详情";
+					if (contentId[1] == 'home') {
+						console.log(transTitle(contentId[2]));
+						document.getElementById("current-nav").textContent = "您当前位置：首页 > 湖北智库 > " + transTitle(contentId[2]) + " > 详情";
+					} else {
+						document.getElementById("current-nav").textContent = "您当前位置： 湖北智库 > " + decodeURI(contentId[1]) + " > 详情";
+					}
 				}
 				selectArticleDetails(contentId[0], function(result) {
 					if (result != null) {
@@ -131,12 +141,13 @@
 						if (result.source == null) {
 							result.source = ""
 						}
-						var content = '<h3 class="relative">' + result.title+'</h3>';
+						var content = '<h3 class="relative">' + result.title + '</h3>';
 						content += '<p style="text-align:left; margin-top:20px;">作者：<span class="red">' + result.author + '</span>&nbsp;来源：' + result.source + ' <span class="right">' + time + '</span></p>';
 						content += '<div class="article-content pt50 pb40">';
 						content += '<p>' + result.content + '</p>';
 						content += '<div style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;"/>&nbsp;&nbsp;<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a></div>'
 						content += '</div>';
+						document.title=result.title+'-湖北智库网';
 						document.getElementById("article").innerHTML = content;
 					}
 				});
@@ -145,25 +156,25 @@
 
 			function transTitle(num) {
 				switch (num) {
-					case '106':
+					case 'typeId=106':
 						return '党政智库'
 						break;
-					case '107':
+					case 'typeId=107':
 						return '社科院智库'
 						break;
-					case '108':
+					case 'typeId=108':
 						return '党校智库'
 						break;
-					case '109':
+					case 'typeId=109':
 						return '省级专门智库'
 						break;
-					case '110':
+					case 'typeId=110':
 						return '省级改革智库'
 						break;
-					case '111':
+					case 'typeId=111':
 						return '高校智库'
 						break;
-					case '112':
+					case 'typeId=112':
 						return '社会智库'
 						break;
 					default:

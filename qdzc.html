@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>湖北智库-会议集萃</title>
+		<title>湖北智库-智库论坛</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="./css/pagination.css" />
@@ -55,7 +55,6 @@
 		<div class="navbar">
 			<div class="container" id="container">
 				<ul>
-					<!--<li><a href="index.html" class="current">智库首页</a></li>-->
 					<li><a href="zkywList.html">智库动态</a></li>
 					<li><a href="hotspots.html">决策热点</a></li>
 					<li><a href="decision.html">决策调研</a></li>
@@ -70,14 +69,26 @@
 		</div>
 		<div class="listContent">
 			<div class="leftMenu" id="leftMenu">
-				<ul>
-				</ul>
+				<!--<ul>
+					<li><a class="current" onclick="leftMenuClickEvent(event, this,0)">全部</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,1)">党政智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,2)">社科院智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,3)">党校（行政学院）智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,4)">省级专门智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,5)">省级改革智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,6)">高校智库</a></li>
+					<li><a onclick="leftMenuClickEvent(event, this,7)">社会智库</a></li>
+				</ul>-->
 			</div>
 			<div class="listRight">
-				<div class="listNavbar">您当前位置：会议集萃 > 党委政府重要会议</div>
+				<div class="listNavbar">您当前位置：湖北智库 > 党政智库</div>
 				<ul id="listRight">
 				</ul>
 				<div id="pagination_7"></div>
+				<div id="backTopOut" class="backTopOut" style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;" />&nbsp;&nbsp;
+					<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a>
+				</div>
+
 			</div>
 		</div>
 		<div class="footer">
@@ -131,26 +142,26 @@
 		var _subid = 12;
 
 		function loadHtmlContent() {
-			getArticleSonSort(23, function(result) {
+			getArticleSonSort(105, function(result) {
 				if (result != null) {
-					console.log('result', result);
 					var content = '<ul>';
 					var firstId = result[0].id;
 					var firstTitle = result[0].name;
 					for (var i = 0; i < result.length; i++) {
 						var subObj = result[i];
-						content += '<li><a onclick="leftMenuClickEvent(event, this,' + subObj.id + ')"' + (i == 0 ? ' class="current">' : '>') + subObj.name + '</a></li>';
+						content += '<li><a href="#' + subObj.id + '" onclick="leftMenuClickEvent(event, this,' + subObj.id + ')"' + (i == 0 ? ' class="current">' : '>') + subObj.name + '</a></li>';
 					}
 					content += '</ul>';
 					document.getElementById("leftMenu").innerHTML = content;
-					ArticleSort(firstId, 23, 0, firstTitle);
+					ArticleSort(firstId, 105, 0, firstTitle);
 				}
 			});
 		}
 		loadHtmlContent();
 
 		function leftMenuClickEvent(event, obj, subid) {
-			var title = '党委政府重要会议';
+			_subid = subid;
+			var title = '湖北党政智库';
 			if (obj != null) {
 				for (var i = 0; i < obj.parentElement.parentElement.childElementCount; i++) {
 					var aobj = obj.parentElement.parentElement.children[i].children[0];
@@ -160,26 +171,26 @@
 					}
 				}
 				obj.className = "current";
-				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：会议集萃  > " + obj.textContent;
+				if ($('#pagination_7').length && $('#pagination_7').length > 0) {
+					$('#pagination_7').remove();
+					$('#backTopOut').before('<div id="pagination_7"></div>');
+				}
+				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：湖北智库  > " + obj.textContent;
 				title = obj.textContent;
-				ArticleSort(subid, 23, 0, title);
+				ArticleSort(subid, 105, 0, title);
 			}
 		}
 
 		function ArticleSort(subid, parentId, nowPage, title) {
 			selectArticleSort(subid, parentId, nowPage, function(result, res) {
 				var totalPages = res.page.totalPages;
-				console.log('------------subid-----------', subid);
-				console.log('---------totalPages---------', res.page.totalPages);
-				console.log('---------totalPages1---------', totalPages);
 				if (result != null) {
 					var content = '';
 					for (var i = 0; i < result.length; i++) {
 						var subObj = result[i];
-						content += '<li><a href="conference-details.html?' + subObj.id + '&' + encodeURI(title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
+						content += '<li><a href="qdzc-details.html?' + subObj.id + '&' + encodeURI(title) + '&typeId=' + subid + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
 					}
 					document.getElementById("listRight").innerHTML = content;
-					//					if (totalPages != 0) {
 					$("#pagination_7").whjPaging({
 						totalPage: totalPages,
 						showPageNum: 10,
@@ -191,10 +202,9 @@
 						isResetPage: true,
 						callBack: function(currPage, pageSize) {
 							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
-							ArticleSort(_subid, 11, currPage - 1, title);
+							ArticleSort(_subid, 24, currPage - 1, title);
 						}
 					});
-					//					}
 				} else {
 					document.getElementById("listRight").innerHTML = "";
 				}

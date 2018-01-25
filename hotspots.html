@@ -86,7 +86,7 @@
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
 				<div class="foonterMain">
-				    <p>鄂ICP备13008287号&nbsp;&#169;2017 湖北省社会科学院 All Rights Reserved</p>
+					<p>鄂ICP备13008287号&nbsp;&#169;2017 湖北省社会科学院 All Rights Reserved</p>
 					<p>&nbsp;&nbsp;地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
@@ -105,7 +105,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -121,6 +121,10 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/ArticleSortManager.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
@@ -129,7 +133,7 @@
 		function loadHtmlContent() {
 			getArticleSonSort(11, function(result) {
 				if (result != null) {
-					console.log('热点', result);
+//					console.log('热点', result);
 					var content = '<ul>';
 					var firstId = result[0].id;
 					var firstTitle = result[0].name;
@@ -157,7 +161,7 @@
 					}
 				}
 				obj.className = "current";
-				if($('#pagination_7').length && $('#pagination_7').length>0){
+				if ($('#pagination_7').length && $('#pagination_7').length > 0) {
 					$('#pagination_7').remove();
 					$('#backTopOut').before('<div id="pagination_7"></div>');
 				}
@@ -166,9 +170,9 @@
 				ArticleSort(subid, 11, 0, title);
 			}
 		}
-        //每一页数据
+		//每一页数据
 		function ArticleSort(subid, parentId, nowPage, title) {
-			selectArticleSort(subid, parentId, nowPage, function(result,res) {
+			selectArticleSort(subid, parentId, nowPage, function(result, res) {
 				var totalPages = res.page.totalPages;
 				if (result != null) {
 					var content = '';
@@ -177,27 +181,30 @@
 						content += '<li><a href="hotspots-details.html?' + subObj.id + '&' + encodeURI(title) + '&typeId=' + subid + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
 					}
 					document.getElementById("listRight").innerHTML = content;
-//					if (totalPages != 0) {
-						$("#pagination_7").whjPaging({
-							totalPage: totalPages,
-							showPageNum: 10,
-							isShowFL: false,
-							isShowPageSizeOpt: false,
-							isShowSkip: false,
-							isShowRefresh: false,
-							isShowTotalPage: true,
-							isResetPage: true,
-							callBack: function(currPage, pageSize) {
-								console.log('currPage:' + currPage + '     pageSize:' + pageSize);
-								ArticleSort(_subid, 11, currPage - 1, title);
-							}
-						});
-//					}
+					$("#pagination_7").whjPaging({
+						totalPage: totalPages,
+						showPageNum: 10,
+						isShowFL: false,
+						isShowPageSizeOpt: false,
+						isShowSkip: false,
+						isShowRefresh: false,
+						isShowTotalPage: true,
+						isResetPage: true,
+						callBack: function(currPage, pageSize) {
+							console.log('currPage:' + currPage + '     pageSize:' + pageSize);
+							ArticleSort(_subid, 11, currPage - 1, title);
+						}
+					});
+					//					}
 				} else {
 					document.getElementById("listRight").innerHTML = "";
 				}
 			});
 		}
+		
+		
+		
+		
 	</script>
 
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
-
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -161,7 +159,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -177,6 +175,10 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/findOrganizationByLetter.js"></script>
@@ -185,7 +187,7 @@
 	<script>
 		var parentId = 0;
 		var organizationType = 0;
-		var title=""
+		var title = ""
 		$(function() {
 			$('.org-letter span').click(function() {
 				loadHtmlContent(null);
@@ -238,7 +240,6 @@
 							keyword = $('#addressSelectTextField')[0].value;
 						}
 					}
-					
 					findOrganizationByCondition(field, keyword, organizationType, function(result) {
 						document.getElementById("line-spe-china").innerHTML = '';
 						letterObject = result;
@@ -259,7 +260,7 @@
 								content += '<li><span>' + i + '</span>';
 								for (var j = 0; j < objArr.length; j++) {
 									var subObj = objArr[j];
-									content += '<a href="##' + subObj.id + '&' + i + '" onclick="organizationNameClickEvent(event, this,' + subObj.id + ')">' + subObj.name + '</a>';
+									content += '<a href="#' + subObj.id + '&' + i + '" onclick="organizationNameClickEvent(event, this,' + subObj.id + ')">' + subObj.name + '</a>';
 								}
 								content += '</li>';
 							}
@@ -268,12 +269,7 @@
 							}
 						}
 					}, 0);
-				
-			
-			
-			
-			
-			})
+				})
 				//获取最新机构
 			getOrgNew(0);
 		})
@@ -308,7 +304,7 @@
 							var content = '<ul>';
 							for (var i = 0; i < result.length; i++) {
 								var subObj = result[i];
-								content += '<li><a href="##' + subObj.id + '" onclick="leftMenuClickEvent(event, this,' + subObj.id + ')"' + (i == 0 ? ' class="current">' : '>') + subObj.name + '</a></li>';
+								content += '<li><a href="#' + subObj.id + '" onclick="leftMenuClickEvent(event, this,' + subObj.id + ')"' + (i == 0 ? ' class="current">' : '>') + subObj.name + '</a></li>';
 							}
 							content += '</ul>';
 							document.getElementById("leftMenu").innerHTML = content;
@@ -349,7 +345,7 @@
 						document.getElementById("line-spe-china").innerHTML = content;
 					}
 				}
-			}, 1);
+			}, 0);
 		}
 		loadHtmlContent(null);
 
@@ -365,16 +361,15 @@
 					}
 				}
 				obj.className = "current";
-				title=obj.textContent;
-				if(title!="全部"){
-					title='湖北'+obj.textContent;
+				title = obj.textContent;
+				if (title != "全部") {
+					title = '湖北' + obj.textContent;
 				}
 				document.getElementsByClassName("listNavbar")[0].textContent = "您当前位置：智库机构  > " + title;
 				title = obj.textContent;
 			}
 			subId = subid;
 			document.getElementById("line-spe-china").innerHTML = '';
-			//        $('.listRight div[class = "pages"]')[0].hidden = true;
 			var contentId = window.location.hash.toString();
 			contentId = contentId.substring(2, contentId.length);
 			findOrganizationByLetter(null, 0, function(result) {
@@ -407,160 +402,8 @@
 				}
 			}, subid);
 			getOrgNew(subid);
-			//frontEnd/findByOrganizationType
-			/* selectArticleOrgSort(subid, 0,function(result) {
-			     console.log('-----------------',result)
-			     document.getElementById("line-spe-china").innerHTML = '';
-			     letterObject = result;
-			     var length = function() {
-			         var count = 0;
-			         for (var i in result) {
-			             count++;
-			         }
-			         return count;
-			     };
-			     if (length() > 0) {
-			         var content = '';
-			         for (var i in result) {
-			             var objArr = result[i];
-			             if (objArr.length == 0) {
-			                 continue;
-			             }
-			             content += '<li><span>' + i + '</span>';
-			             var subObj = objArr;
-			             content += '<a href="##' + subObj.id + '&' + i + '" onclick="organizationNameClickEvent(event, this,' + subObj.id + ')">' + subObj.name + '</a>';
-			             content += '</li>';
-			         }
-			         if (content.length > 0) {
-			             document.getElementById("line-spe-china").innerHTML = content;
-			         }
-			     }*/
-			/*if (result != null) {
-			    articleSortArr = result;
-			    var content = '';
-			    for (var i = 0; i < result.length; i++) {
-			        var subObj = result[i];
-			        content += '<li><a href="forum-details.html?' + subObj.id + '&' + encodeURI(title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
-			    }
-			    document.getElementById("line-spe-china").innerHTML = content;
-			    if (result.length > 10) {
-			        //                    $('.listRight div[class = "pages"]')[0].hidden = true
-			    }
-			}*/
-			// });
-			/* selectArticleSort(subid, 0, 0, function(result) {
-			     if (result != null) {
-			         articleSortArr = result;
-			         var content = '';
-			         for (var i = 0; i < result.length; i++) {
-			             var subObj = result[i];
-			             content += '<li><a href="forum-details.html?' + subObj.id + '&' + encodeURI(title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
-			         }
-			         document.getElementById("line-spe-china").innerHTML = content;
-			         if (result.length > 10) {
-			             //                    $('.listRight div[class = "pages"]')[0].hidden = true
-			         }
-			     }
-			 });*/
-		}
-		/*findTitleImageByState();
-		var orgId;
-
-		function orgIntroMoreEvent() {
-			window.location.href = 'org-intro.html?' + orgId;
 		}
 
-		function getContentList(contentId) {
-			$('.leftMenu').find('[href = "org-intro.html"]')[0].href = "org-intro.html?" + contentId;
-			getOrganizationNotice(contentId, 21, function(result) {
-				if (result != null) {
-					$('.org-home-topNews dt')[0].textContent = result.title;
-					$('.org-home-topNews dd')[0].innerHTML = result.content.substring(0, 200) + '<a href="organization-details.html?' + result.id + '" class="red">【详情】</a>';
-				}
-			})
-			getOrganizationActivity(contentId, 22, 0, 4, function(result) {
-				if (result != null) {
-					for (var i = 0; i < 4; i++) {
-						$('.org-home-topNews li')[i].hidden = false;
-						if (i >= result.length) {
-							$('.org-home-topNews li')[i].hidden = true;
-						} else {
-							if (i == 3) {
-								$('.org-home-topNews li')[i].innerHTML = '<a href="organization-details.html?' + result[i].id + '">【' + result[i].title + '】</a><span class="red">【更多动态】</span>';
-							} else {
-								$('.org-home-topNews li')[i].innerHTML = '<a href="organization-details.html?' + result[i].id + '">【' + result[i].title + '】</a>';
-							}
-						}
-					}
-				}
-			})
-			getInstitutionArticle(contentId, 46, 0, 1, function(result) {
-				if (result != null) {
-					var subObj = result[0];
-					$('.org-home-news dt')[0].find('img')[2].src = subObj.imgUrl;
-					$('.org-home-news dt').find('p')[1].textContent = subObj.title;
-					$('.org-home-news').find('dd')[7].textContent = subObj.title;
-					$('.org-home-news dl').find('[class = org-home-text]')[2].textContent = subObj.content;
-				}
-			})
-			getInstitutionArticle(contentId, 45, 0, 2, function(result) {
-				if (result != null) {
-					for (var i = 0; i < result.length; i++) {
-						var subObj = result[i];
-						$('.org-home-news dt')[0].find('img')[i + 1].src = subObj.imgUrl;
-						$('.org-home-news').find('dd')[i + 5].textContent = subObj.title;
-						$('.org-home-news dl').find('[class = org-home-text]')[0].textContent = subObj.content;
-					}
-				}
-			})
-			getInstitutionArticle(contentId, 44, 0, 5, function(result) {
-				if (result != null) {
-					var subObj = result[0];
-					$('.org-home-news dt')[0].find('img')[0].src = subObj.imgUrl;
-					$('.org-home-news dt').find('p')[0].textContent = subObj.title;
-					for (var i = 0; i < result.length; i++) {
-						$('.org-home-news').find('dd')[i].textContent = subObj.title;
-					}
-				}
-			})
-		}
-
-		function loadHtmlContent() {
-			var contentId = window.location.search.toString();
-			if (contentId.length > 0) {
-				contentId = contentId.substring(1, contentId.length);
-				contentId = contentId.split('&');
-				contentId = contentId[0];
-				orgId = contentId;
-				findInstitutionByid(contentId, function(result) {
-					if (result != null) {
-						$('.listNavbar')[0].textContent = '——' + result.name + '——';
-						if (result.lead.length > 0)
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>主任、党组书记';
-						if (result.intro.length > 0)
-							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + contentId + '" class="red">【详情】</a>';
-						if (result.institutionSetting.length > 0)
-							$('.org-right-box-content p')[1].innerHTML = result.institutionSetting.substring(0, 100);
-					}
-				})
-				getContentList(contentId);
-			} else {
-				getThisInstitution(function(result) {
-					if (result != null) {
-						orgId = result.id;
-						getContentList(result.id);
-						$('.listNavbar')[0].textContent = '——' + result.name + '——';
-						if (result.lead.length > 0)
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>主任、党组书记';
-						if (result.intro.length > 0)
-							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + result.id + '" class="red">【详情】</a>';
-						if (result.institutionSetting.length > 0)
-							$('.org-right-box-content p')[1].innerHTML = result.institutionSetting.substring(0, 100);
-					}
-				})
-			}
-		}
-		loadHtmlContent();*/
 		function getOrgNew(id) {
 			getZkNew(id, function(result) {
 				if (result != null) {

@@ -206,7 +206,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -222,6 +222,10 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/HttpRequest.js"></script>
@@ -281,13 +285,13 @@
 					$('#surepwtips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 				}
 			});
-			$('#newimg,#newloginImg').on('click', function() {
-				$.post(BaseUrl + "/frontEnd/getCaptcha", function(res) {
-					code = res.result.captcha;
-					$('#codeimg').attr('src', res.result.img);
-					$('#loginImg').attr('src', res.result.img);
-				})
-			})
+			//			$('#newimg,#newloginImg').on('click', function() {
+			//				$.post(BaseUrl + "/frontEnd/getCaptcha", function(res) {
+			//					code = res.result.captcha;
+			//					$('#codeimg').attr('src', res.result.img);
+			//					$('#loginImg').attr('src', res.result.img);
+			//				})
+			//			})
 			$('#code').change(function() {
 				var codes = $('#code').val();
 				if (codes != code) {
@@ -374,7 +378,7 @@
 				} else {
 					$('#categorytips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					catecontent = categoryArr[parseInt(cate)];
-//					console.log('职业类别', catecontent);
+					//					console.log('职业类别', catecontent);
 				}
 				if (dist == 0) {
 					$('#disttips').html('请选择地区&nbsp;&nbsp;');
@@ -383,7 +387,7 @@
 				} else {
 					$('#disttips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					discontent = disArr[parseInt(dist)];
-//					console.log('地区', discontent);
+					//					console.log('地区', discontent);
 				}
 				if (!codes) {
 					$('#codetips').html('请填写验证码');
@@ -406,7 +410,7 @@
 				} else {
 					$('#companytips').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					comcontent = comArr[parseInt(company)];
-//					console.log('公司', comcontent);
+					//					console.log('公司', comcontent);
 				}
 				var data = JSON.stringify({
 					email: email,
@@ -427,7 +431,7 @@
 					contentType: 'application/json;charset=UTF-8',
 					success: function(data) {
 						if (data.status == 0) {
-							$('.regisbox').html('<a href='+gotoEmail(email)+'>'+data.message + '</a>');
+							$('.regisbox').html('<a href=' + gotoEmail(email) + '>' + data.message + '</a>');
 							$('.regisbox').css('color', 'green');
 							$('.regisbox').css('padding-top', '200px');
 						} else if (data.status == -1) {
@@ -446,55 +450,56 @@
 				reg = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/g
 				return reg.test(str)
 			}
-					function gotoEmail($mail) {
-			$t = $mail.split('@')[1];
-			$t = $t.toLowerCase();
-			if ($t == '163.com') {
-				return 'http://mail.163.com';
-			} else if ($t == 'vip.163.com') {
-				return 'http://www.vip.163.com';
-			} else if ($t == '126.com') {
-				return 'http://mail.126.com';
-			} else if ($t == 'qq.com' || $t == 'vip.qq.com' || $t == 'foxmail.com') {
-				return 'http://mail.qq.com';
-			} else if ($t == 'gmail.com') {
-				return 'http://mail.google.com';
-			} else if ($t == 'sohu.com') {
-				return 'http://mail.sohu.com';
-			} else if ($t == 'tom.com') {
-				return 'http://mail.tom.com';
-			} else if ($t == 'vip.sina.com') {
-				return 'http://vip.sina.com';
-			} else if ($t == 'sina.com.cn' || $t == 'sina.com') {
-				return 'http://mail.sina.com.cn';
-			} else if ($t == 'tom.com') {
-				return 'http://mail.tom.com';
-			} else if ($t == 'yahoo.com.cn' || $t == 'yahoo.cn') {
-				return 'http://mail.cn.yahoo.com';
-			} else if ($t == 'tom.com') {
-				return 'http://mail.tom.com';
-			} else if ($t == 'yeah.net') {
-				return 'http://www.yeah.net';
-			} else if ($t == '21cn.com') {
-				return 'http://mail.21cn.com';
-			} else if ($t == 'hotmail.com') {
-				return 'http://www.hotmail.com';
-			} else if ($t == 'sogou.com') {
-				return 'http://mail.sogou.com';
-			} else if ($t == '188.com') {
-				return 'http://www.188.com';
-			} else if ($t == '139.com') {
-				return 'http://mail.10086.cn';
-			} else if ($t == '189.cn') {
-				return 'http://webmail15.189.cn/webmail';
-			} else if ($t == 'wo.com.cn') {
-				return 'http://mail.wo.com.cn/smsmail';
-			} else if ($t == '139.com') {
-				return 'http://mail.10086.cn';
-			} else {
-				return '';
-			}
-		};
+
+			function gotoEmail($mail) {
+				$t = $mail.split('@')[1];
+				$t = $t.toLowerCase();
+				if ($t == '163.com') {
+					return 'http://mail.163.com';
+				} else if ($t == 'vip.163.com') {
+					return 'http://www.vip.163.com';
+				} else if ($t == '126.com') {
+					return 'http://mail.126.com';
+				} else if ($t == 'qq.com' || $t == 'vip.qq.com' || $t == 'foxmail.com') {
+					return 'http://mail.qq.com';
+				} else if ($t == 'gmail.com') {
+					return 'http://mail.google.com';
+				} else if ($t == 'sohu.com') {
+					return 'http://mail.sohu.com';
+				} else if ($t == 'tom.com') {
+					return 'http://mail.tom.com';
+				} else if ($t == 'vip.sina.com') {
+					return 'http://vip.sina.com';
+				} else if ($t == 'sina.com.cn' || $t == 'sina.com') {
+					return 'http://mail.sina.com.cn';
+				} else if ($t == 'tom.com') {
+					return 'http://mail.tom.com';
+				} else if ($t == 'yahoo.com.cn' || $t == 'yahoo.cn') {
+					return 'http://mail.cn.yahoo.com';
+				} else if ($t == 'tom.com') {
+					return 'http://mail.tom.com';
+				} else if ($t == 'yeah.net') {
+					return 'http://www.yeah.net';
+				} else if ($t == '21cn.com') {
+					return 'http://mail.21cn.com';
+				} else if ($t == 'hotmail.com') {
+					return 'http://www.hotmail.com';
+				} else if ($t == 'sogou.com') {
+					return 'http://mail.sogou.com';
+				} else if ($t == '188.com') {
+					return 'http://www.188.com';
+				} else if ($t == '139.com') {
+					return 'http://mail.10086.cn';
+				} else if ($t == '189.cn') {
+					return 'http://webmail15.189.cn/webmail';
+				} else if ($t == 'wo.com.cn') {
+					return 'http://mail.wo.com.cn/smsmail';
+				} else if ($t == '139.com') {
+					return 'http://mail.10086.cn';
+				} else {
+					return '';
+				}
+			};
 		}
 	</script>
 

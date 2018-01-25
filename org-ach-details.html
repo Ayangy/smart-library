@@ -109,7 +109,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -125,35 +125,47 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script>
-//		getKind(1);
-//		getRecommendArticle(1);
+		//		getKind(1);
+		//		getRecommendArticle(1);
 		getNewestArticle();
+
 		function loadHtmlContent(contentId) {
 			if (contentId == -1) {
 				contentId = window.location.search.toString();
 				contentId = contentId.substring(1, contentId.length);
 				contentId = contentId.split('&');
 			}
-			document.getElementById("current-nav").textContent = "您当前位置：研究成果 > " + decodeURI(contentId[1]) + " > 详情";
+			if (contentId[1] == 'home') {
+				document.getElementById("current-nav").textContent = "您当前位置：研究成果 > 详情";
+			} else if (contentId[1] == 'now') {
+				document.getElementById("current-nav").textContent = "您当前位置：研究成果  > 最新发布  > 详情";
+			} else {
+				document.getElementById("current-nav").textContent = "您当前位置：研究成果 > " + transTitle(contentId[1]) + " > 详情";
+			}
 			selectArticleDetails(contentId[0], function(result) {
 				if (result != null) {
 					getKind(result.textTypeId);
-					var time=(result.addTime).substring(0,10);
-					if(result.author==null){
-						result.author=""
+					var time = (result.addTime).substring(0, 10);
+					if (result.author == null) {
+						result.author = ""
 					}
-					if(result.source==null){
-						result.source=""
+					if (result.source == null) {
+						result.source = ""
 					}
 					var content = '<h3 class="relative">' + result.title;
-					content += '<p style="text-align:left;">作者：<span class="red">'+result.author+'</span>&nbsp;来源：'+result.source+' <span class="right">'+time+'</span></p>';
+					content += '<p style="text-align:left;">作者：<span class="red">' + result.author + '</span>&nbsp;来源：' + result.source + ' <span class="right">' + time + '</span></p>';
 					content += '</h3>';
 					content += '<div class="article-content pt50 pb40">';
 					content += '<p>' + result.content + '</p>';
 					content += '<div style="text-align: center;cursor: pointer;margin-top: 50px;"><img onclick="backTopEvent()" id="backTop" src="img/backTop1.png" style="width: 120px;"/>&nbsp;&nbsp;<a href="index.html"><img id="backHome" src="img/backHome1.png" style="width: 120px;" /></a></div>'
 					content += '</div>';
+					document.title = result.title + '-湖北智库网';
 					document.getElementById("article").innerHTML = content;
 				}
 				$("#backTop").hover(function() {
@@ -170,13 +182,30 @@
 		}
 		loadHtmlContent(-1);
 
-		function RecommendListClickEvent(subid) {
-			contentId = window.location.search.toString();
-			contentId = contentId.substring(1, contentId.length);
-			contentId = contentId.split('&');
-			window.location.href = 'org-ach-details.html?' + subid + '&' + decodeURI(contentId[1]);
+		function RecommendListClickEvent(subid, textTypeId, nows) {
+			if (nows == '1') {
+				window.location.href = 'org-ach-details.html?' + subid + '&now';
+			} else {
+				window.location.href = 'org-ach-details.html?' + subid + '&home';
+			}
 		}
-		
+
+		function transTitle(str) {
+			switch (str) {
+				case 'typeId=127':
+					return "内部报告"
+					break;
+				case 'typeId=128':
+					return "学术论文"
+					break;
+				case 'typeId=129':
+					return "专业著作"
+					break;
+				default:
+					return "成果汇编"
+					break;
+			}
+		}
 	</script>
 
 </html>

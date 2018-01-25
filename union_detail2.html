@@ -240,7 +240,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -256,12 +256,17 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/findOrganizationByLetter.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
 	<script>
 		var orgId;
+
 		function orgIntroMoreEvent() {
 			window.location.href = 'org-intro.html?' + orgId;
 		}
@@ -332,7 +337,7 @@
 					if (result != null) {
 						$('.listNavbar')[0].textContent = '——' + result.name + '——';
 						if (result.lead.length > 0)
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>';
+							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>主任、党组书记';
 						if (result.intro.length > 0)
 							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + contentId + '" class="red">【详情】</a>';
 						if (result.institutionSetting.length > 0)
@@ -356,7 +361,7 @@
 						getContentList(result.id);
 						$('.listNavbar')[0].textContent = '——' + result.name + '——';
 						if (result.lead.length > 0)
-							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>';
+							$('.org-right-box-content li')[0].innerHTML = '<strong>' + result.lead + '</strong>主任、党组书记';
 						if (result.intro.length > 0)
 							$('.org-right-box-content p')[0].innerHTML = result.intro.substring(0, 100) + '<a href="org-intro.html?' + result.id + '" class="red">【详情】</a>';
 						if (result.institutionSetting.length > 0)

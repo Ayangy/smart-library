@@ -179,7 +179,7 @@ function findVideoNews(index, size, query, callBack) {
 					var resultArr = result.result;
 					if (resultArr.length > 0) {
 						if (callBack != null) {
-							callBack(resultArr,result);
+							callBack(resultArr, result);
 						} else {
 							videoNews = resultArr[0];
 							videoNews1 = resultArr[1];
@@ -206,7 +206,7 @@ function findVideoNews(index, size, query, callBack) {
 							document.getElementById("findVideoNews").innerHTML = content;
 						}
 					} else {
-						 callBack(resultArr,result);
+						callBack(resultArr, result);
 					}
 				}
 				break;
@@ -248,7 +248,7 @@ function getKind(textTypeId) {
 						content += '<ul>';
 						for (var i = 0; i < kindContentArr.length; i++) {
 							var subObj = kindContentArr[i];
-							content += '<li><a href="#' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ','+subObj.textTypeId+')">•&nbsp;&nbsp;' + subObj.title + '</a></li>';
+							content += '<li><a href="#' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ',' + subObj.textTypeId + ')">•&nbsp;&nbsp;' + subObj.title + '</a></li>';
 						}
 						document.getElementById("KindList").innerHTML = content;
 					}
@@ -284,12 +284,12 @@ function getRecommendArticle(recommend) {
 							content += '<ul>';
 							for (var i = 0; i < recommendContentArr.length; i++) {
 								var subObj = recommendContentArr[i];
-//								console.log('每一条智库动态',subObj);
+								//								console.log('每一条智库动态',subObj);
 								var title = subObj.title;
 								title = title.length < 24 ? title : title.substring(0, 23) + '...';
 								content += '<li class="item"' + (i == 0 ? ' style="left:0;">' : '>');
-								content += '<a href="news-details.html?' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ','+subObj.textTypeId+')"><img style="width:455px" src=' + subObj.imgUrl + '></a>';
-								content += '<h3><a href="news-details.html?' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ','+subObj.textTypeId+')">' + title + '</a></h3>';
+								content += '<a href="news-details.html?' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ',' + subObj.textTypeId + ')"><img style="width:455px" src=' + subObj.imgUrl + '></a>';
+								content += '<h3><a href="news-details.html?' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ',' + subObj.textTypeId + ')">' + title + '</a></h3>';
 								content += '<div></div>';
 								content += '</li>';
 							}
@@ -333,7 +333,7 @@ function getNewestArticle() {
 						content += '<ul>';
 						for (var i = 0; i < newestContentArr.length; i++) {
 							var subObj = newestContentArr[i];
-							content += '<li><a href="##' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ','+subObj.textTypeId+',1)">•&nbsp;&nbsp;' + subObj.title + '</a></li>';
+							content += '<li><a href="##' + subObj.id + '" onclick="RecommendListClickEvent(' + subObj.id + ',' + subObj.textTypeId + ',1)">•&nbsp;&nbsp;' + subObj.title + '</a></li>';
 						}
 						document.getElementById("NewestList").innerHTML = content;
 					}
@@ -601,13 +601,91 @@ function makeComments(data, callBack) {
 	});
 }
 
+//智库机构详情
+function getInstitutionArticle(textTypeId, parentId, orgId, index, size, callBack) {
+	var params = '';
+	if (textTypeId != null) {
+		if (params.length == 0) {
+			params += '?textTypeId=' + textTypeId;
+		} else {
+			params += '&textTypeId=' + textTypeId;
+		}
+	}
+	if (parentId != null) {
+		if (params.length == 0) {
+			params += '?parentId=' + parentId;
+		} else {
+			params += '&parentId=' + parentId;
+		}
+	}
+	if (orgId != null) {
+		if (params.length == 0) {
+			params += '?organizationId=' + orgId;
+		} else {
+			params += '&organizationId=' + orgId;
+		}
+	}
+	if (index != null) {
+		if (params.length == 0) {
+			params += '?index=' + index;
+		} else {
+			params += '&index=' + index;
+		}
+	}
+	if (size != null) {
+		if (params.length == 0) {
+			params += '?size=' + size;
+		} else {
+			params += '&size=' + size;
+		}
+	}
+	http.get(BaseUrl + '/frontEnd/getInstitutionArticle' + params, function(err, result) {
+		if (result == null) {
+			return;
+		}
+		var status = result.status;
+		switch (status) {
+			case 0:
+				{
+					var resultObj = result.result;
+					if (resultObj && resultObj.length == 0) {
+						resultObj = null;
+					}
+					callBack && callBack(resultObj, result);
+				}
+				break;
+			default:
+				{
+					callBack && callBack(null);
+				}
+				break;
+		}
+	});
+}
 
-
-
-
-
-
-
-
-
-
+//获取机构信息
+///frontEnd/getOrganizationList
+function getOrganizationList(type, callBack) {
+	http.get(BaseUrl + '/frontEnd/getOrganizationList?type=' + type, function(err, result) {
+		if (result == null){
+			return;
+		}
+		var status = result.status;
+		switch (status) {
+			case 0:
+				{
+					var resultObj = result.result;
+					if (resultObj && resultObj.length == 0) {
+						resultObj = null;
+					}
+					callBack && callBack(resultObj);
+				}
+				break;
+			default:
+				{
+					callBack && callBack(null);
+				}
+				break;
+		}
+	});
+}

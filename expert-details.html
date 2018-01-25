@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@
 			}
 		</style>
 	</head>
+
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -187,7 +189,7 @@
 				</li>
 				<li>
 					<span>密&nbsp;码：</span>
-					<input id="password" type="text" />
+					<input id="password" type="password" />
 				</li>
 				<li>
 					<span class="code">验证码：</span>
@@ -203,6 +205,10 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/HomePage/HomePageManager.js"></script>
@@ -213,7 +219,7 @@
 			var expertId = window.location.search.toString();
 			expertId = expertId.substring(1, expertId.length);
 			queryAnExpert(expertId, function(result) {
-//				console.log('专家详细数据', result);
+				//				console.log('专家详细数据', result);
 				if (!result[0].organizationName) {
 					$('#anchor4').css('display', 'none');
 				}
@@ -259,10 +265,8 @@
 					}
 					$('.expert').find('img')[0].src = result[0].img;
 					$('#name').text(result[0].name);
-					if(result[0].sex==null){
-						result[0].sex="";
-						
-						
+					if (result[0].sex == null) {
+						result[0].sex = "";
 					}
 					$('#gender').text(result[0].sex);
 					$('#zhiwei').text(result[0].position)
