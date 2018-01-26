@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="css/SuperSlide2.css" />
 	</head>
+
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -317,30 +319,30 @@
 								<div class="base-content relative" id="database_content">
 									<div class="base-sort hidden" id="base-sort-hidden">
 										<div class="all">
-											<a href="##">
+											<a href="#">
 												<span class="font_settings">全部</span>
 											</a>
 										</div>
 										<ul>
 											<li>
-												<a href="##">
+												<a href="#">
 													<span class="font_settings">A</span>
 												</a>
 											</li>
 											<li>
-												<a href="##"><span class="font_settings">B</span></a>
+												<a href="#"><span class="font_settings">B</span></a>
 											</li>
 											<li>
-												<a href="##"><span class="font_settings">C</span></a>
+												<a href="#"><span class="font_settings">C</span></a>
 											</li>
 											<li>
-												<a href="##"><span class="font_settings">D</span></a>
+												<a href="#"><span class="font_settings">D</span></a>
 											</li>
 											<li>
-												<a href="##"><span class="font_settings">E</span></a>
+												<a href="#"><span class="font_settings">E</span></a>
 											</li>
 											<li>
-												<a href="##"><span class="font_settings">F</span></a>
+												<a href="#"><span class="font_settings">F</span></a>
 											</li>
 											<li>
 												<a href="##"><span class="font_settings">G</span></a>
@@ -454,6 +456,10 @@
 				</div>
 				<div class="ewm">
 					<img src="img/ewm.gif">微信公众号</div>
+				<script type="text/javascript">
+					var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+				</script>
 			</div>
 		</div>
 		<!--登录盒子-->
@@ -496,7 +502,6 @@
 		<script src="js/findResultByCriteria.js"></script>
 		<script src="js/dataBaseObject.js"></script>
 		<script src="js/common/jquery.SuperSlide2.js"></script>
-		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 	</body>
 	<script>
 		$('.top_back_home').remove();
@@ -504,12 +509,12 @@
 		var sonsortArr27 = [];
 		var sonsortArr28 = [];
 		//findTitleImageByState();
-         getArticleSonSort(0, function(result) {
+		getArticleSonSort(0, function(result) {
 			if (result != null) {
 				sonsortArr = result;
 			}
 			selectArticleSort(0, 11, 0, function(result) {
-						var content ='';
+				var content = '';
 				if (result == null) {
 					return;
 				}
@@ -855,7 +860,7 @@
 				}
 			});
 		}
-	
+
 		function showDetail(id, type, title, parentId) {
 			if (parentId == 11) {
 				location.href = 'hotspots-details.html?' + id + '&home&typeId=' + type

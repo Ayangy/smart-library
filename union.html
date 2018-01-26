@@ -102,9 +102,7 @@
 						<div class="org-right-box mb10">
 							<h3><strong>单位简介</strong></h3>
 							<div class="org-right-box-content">
-
 								<p class="p10_0">
-
 								</p>
 							</div>
 						</div>
@@ -137,6 +135,10 @@
 					<p>&nbsp;&nbsp;地址：中国湖北武汉东湖路165号 湖北智库网（站）电话：027-86792500 </p>
 				</div>
 				<div class="ewm"><img src="img/ewm.gif">微信公众号</div>
+				<script type="text/javascript">
+					var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+				</script>
 			</div>
 		</div>
 		<!--登录盒子-->
@@ -168,10 +170,6 @@
 				<li class="login-tips"></li>
 			</ul>
 		</div>
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-			document.write(unescape("%3Cspan id='cnzz_stat_icon_1272826515'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272826515%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-		</script>
 	</body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/findOrganizationByLetter.js"></script>
@@ -243,7 +241,7 @@
 			});
 			//研究项目
 			getInstitutionArticle(0, 120, subid, 0, 6, function(res) {
-					if (res!=null) {
+					if (res != null) {
 						var str = '<h3 class="news-title-lg">' +
 							'<img src="img/page.png" class="left"><strong>研究项目</strong><a href="org-project.html?' + subid + '">更多 &gt;&gt;</a> </h3>' +
 							'<dl><dt><a href="org-project-details.html?' + res[0].id + '&home"><img src="' + res[0].imgUrl + '"><p>' + res[0].title + '</p></a></dt>';
@@ -252,30 +250,30 @@
 						}
 						str += '</dl>';
 						$('#org-project').html(str);
-					}else{
+					} else {
 						$('#org-project').html('');
 					}
 				})
 				//研究成果
 			getInstitutionArticle(0, 125, subid, 0, 2, function(res) {
-					if (res!=null) {
+					if (res != null) {
 						var str = '<h3 class="news-title-lg"><img src="img/trophy.png" class="left"><strong>研究成果</strong> <a href="org-ach.html?' + subid + '">更多 &gt;&gt;</a></h3>';
 						for (var i = 0; i < res.length; i++) {
 							str += '<dl class="org-home-img-sm"><dt><img src="' + res[i].imgUrl + '"></dt><dd><a href="org-ach-details.html?' + res[i].id + '&home">' + res[i].title + '</a></dd><p class="org-home-text">' + res[i].imgState + '</p></dl>';
 						}
 						$('#org-ach').html(str);
-					}else{
+					} else {
 						$('#org-ach').html('');
 					}
 				})
 				//出版物
 			getInstitutionArticle(0, 131, subid, 0, 2, function(res) {
-				if (res!= null) {
+				if (res != null) {
 					var str = '<h3 class="news-title-lg"><img src="img/book.png" class="left"><strong>出版物</strong><a href="org-publish.html?' + subid + '">更多 &gt;&gt;</a></h3>' +
 						'<dl class="org-home-img-sm"><dt class="org-home-img-sm-dt"><a href="org-publish-details.html?' + res[0].id + '&home" ><img src="' + res[0].imgUrl + '"><p>' + res[0].title + '</p></a></dt>' +
 						'<dd><a href="org-publish-details.html?' + res[1].id + '&home">' + res[1].title + '</a></dd><p class="org-home-text">' + res[1].imgState + '</p></dl>';
 					$('#org-publish').html(str);
-				}else{
+				} else {
 					$('#org-publish').html('');
 				}
 			})

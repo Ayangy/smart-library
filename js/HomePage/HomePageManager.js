@@ -530,7 +530,7 @@ function articleSortPage(textTypeId, index, callBack) {
 			return;
 		}
 		var status = result.status;
-		switch (status) {
+		switch (status){
 			case 0:
 				{
 					var resultObj = result;
@@ -667,7 +667,7 @@ function getInstitutionArticle(textTypeId, parentId, orgId, index, size, callBac
 ///frontEnd/getOrganizationList
 function getOrganizationList(type, callBack) {
 	http.get(BaseUrl + '/frontEnd/getOrganizationList?type=' + type, function(err, result) {
-		if (result == null){
+		if (result == null) {
 			return;
 		}
 		var status = result.status;

@@ -1408,6 +1408,7 @@ input {
 	height: 150px;
 	clear: both;
 	background-image: url(../img/foot.png);
+	background-size: cover;
 	position: relative;
 	margin-top: 40px;
 }
@@ -2161,13 +2162,10 @@ input {
 	margin-bottom: 20px;
 	text-align: justify;
 }
+
 .listContent-details .article-content img {
 	width: 100%;
 }
-
-
-
-
 
 .listContent-details .article-content .ql-align-center {
 	color: #656565;
@@ -2536,7 +2534,8 @@ input {
 	color: #000;
 	line-height: 24px;
 }
-.orgIntro-article b{
+
+.orgIntro-article b {
 	font-weight: normal;
 }
 
@@ -2771,7 +2770,7 @@ orgIntro-article p {
 
 .org-right-box-content ul li {
 	color: #7f7f7f;
-	font-size:14px;
+	font-size: 14px;
 	line-height: 35px;
 }
 
@@ -2782,8 +2781,8 @@ orgIntro-article p {
 
 .org-right-box-content p {
 	color: #353535;
-	font-size:14px;
-	line-height:27px;
+	font-size: 14px;
+	line-height: 27px;
 }
 
 .org-search {
@@ -2859,7 +2858,7 @@ orgIntro-article p {
 
 .org-search-result ol li a {
 	color: #242424;
-	margin-right:26px;
+	margin-right: 26px;
 }
 
 
@@ -3123,7 +3122,7 @@ orgIntro-article p {
 }
 
 .questionnaire-conference p {
-	font-size:14px;
+	font-size: 14px;
 	margin-top: 10px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -3225,14 +3224,14 @@ orgIntro-article p {
 }
 
 .decision-previous-questionnaire-rightDiv p {
-	font-size:14px;
+	font-size: 14px;
 	margin-top: 10px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-line-clamp: 5;
 	-webkit-box-orient: vertical;
-	line-height:22px;
+	line-height: 22px;
 	font-weight: 400
 }
 
@@ -3614,11 +3613,13 @@ orgIntro-article p {
 
 .org-Otherlist span {
 	margin-right: 20px;
-	line-height:30px;
+	line-height: 30px;
 	display: inline-block;
 }
 
+
 /*提示评论*/
+
 .release-box {
 	position: relative;
 }
@@ -3635,28 +3636,12 @@ orgIntro-article p {
 	display: none;
 }
 
-.org-letter{
+.org-letter {
 	width: 100%;
 }
-#cnzz_stat_icon_1272826515{
-	position:relative;
-	bottom:64px;
-	left:1182px;
-	
+
+#cnzz_stat_icon_1272826515 {
+	position: absolute;
+	bottom: 46px;
+	left: 800px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
