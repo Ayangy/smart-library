@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="./js/pagination.min.js"></script>
 	</head>
-
 	<body>
 		<div class="top_nav">
 			<ul class="top_nav_center">
@@ -80,7 +78,7 @@
 				<div id="pagination_7"></div>
 			</div>
 		</div>
-		<div class="footer">
+		<div class="footer" style="margin-top:90px" >
 			<div class="container relative">
 				<img class="logomap" src="img/bot.gif" />
 				<img class="logo" src="img/bottom-logo1.gif" />
@@ -129,7 +127,6 @@
 	<script src="js/ArticleSortManager.js"></script>
 	<script>
 		var _subid = 12;
-
 		function loadHtmlContent() {
 			getArticleSonSort(23, function(result) {
 				if (result != null) {
@@ -169,9 +166,6 @@
 		function ArticleSort(subid, parentId, nowPage, title) {
 			selectArticleSort(subid, parentId, nowPage, function(result, res) {
 				var totalPages = res.page.totalPages;
-				console.log('------------subid-----------', subid);
-				console.log('---------totalPages---------', res.page.totalPages);
-				console.log('---------totalPages1---------', totalPages);
 				if (result != null) {
 					var content = '';
 					for (var i = 0; i < result.length; i++) {
@@ -179,7 +173,7 @@
 						content += '<li><a href="conference-details.html?' + subObj.id + '&' + encodeURI(title) + '">' + subObj.title + '</a><span>[' + subObj.addTime + ']</span></li>';
 					}
 					document.getElementById("listRight").innerHTML = content;
-					//					if (totalPages != 0) {
+					//if (totalPages != 0) {
 					$("#pagination_7").whjPaging({
 						totalPage: totalPages,
 						showPageNum: 10,
