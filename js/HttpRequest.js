@@ -6,7 +6,7 @@
 //document.write("<script language=\"javascript\" src=\"js/jquery.min.js\"><\/script>");
 //var BaseUrl = 'http://192.168.100.190:8080';
 var BaseUrl = 'http://47.104.8.66:8080';
-/*var BaseUrl = 'http://localhost:8080';*/
+//var BaseUrl = 'http://localhost:8080';
 //var BaseUrl = 'http://192.168.100.44:8080'
 
 //登录
